@@ -21,17 +21,33 @@ function tagsTemplate(tags) {
 }
 
 function ratingTemplate(rating) {
-    let stars = '';
+    // Assignment requires ARIA attributes + span wrappers
+    let html = `
+    <span 
+        class="rating" 
+        role="img" 
+        aria-label="Rating: ${rating} out of 5 stars">
+    `;
+
+    const fullStars = Math.floor(rating); // required
+
     for (let i = 1; i <= 5; i++) {
-        stars += i <= rating ? '⭐' : '☆';
+        if (i <= fullStars) {
+            html += `<span aria-hidden="true" class="icon-star">⭐</span>`;
+        } else {
+            html += `<span aria-hidden="true" class="icon-star-empty">☆</span>`;
+        }
     }
-    return `<span class="rating">${stars}</span>`;
+
+    html += `</span>`;
+    return html;
 }
 
 function recipeTemplate(recipe, highlightWords = []) {
-    // Optional: highlight search words in name and description
+    // Optional: highlight search words
     let name = recipe.name;
     let description = recipe.description;
+
     highlightWords.forEach(word => {
         const regex = new RegExp(`(${word})`, 'gi');
         name = name.replace(regex, '<mark>$1</mark>');
@@ -62,7 +78,9 @@ function renderRecipes(list, highlightWords = []) {
     if (list.length === 0) {
         container.innerHTML = `<p>No recipes found. Try another search!</p>`;
     } else {
-        container.innerHTML = list.map(recipe => recipeTemplate(recipe, highlightWords)).join('');
+        container.innerHTML = list
+            .map(recipe => recipeTemplate(recipe, highlightWords))
+            .join('');
     }
 }
 
@@ -71,16 +89,19 @@ function renderRecipes(list, highlightWords = []) {
 ===============================*/
 function filterRecipes(query) {
     const words = query.toLowerCase().split(/\s+/).filter(Boolean);
-    return recipes.filter(recipe => {
-        return words.every(word => {
-            return (
-                recipe.name.toLowerCase().includes(word) ||
-                recipe.description.toLowerCase().includes(word) ||
-                recipe.tags.some(tag => tag.toLowerCase().includes(word)) ||
-                recipe.recipeIngredient.some(ing => ing.toLowerCase().includes(word))
-            );
-        });
-    }).sort((a, b) => a.name.localeCompare(b.name));
+
+    return recipes
+        .filter(recipe => {
+            return words.every(word => {
+                return (
+                    recipe.name.toLowerCase().includes(word) ||
+                    recipe.description.toLowerCase().includes(word) ||
+                    recipe.tags.some(tag => tag.toLowerCase().includes(word)) ||
+                    recipe.recipeIngredient.some(ing => ing.toLowerCase().includes(word))
+                );
+            });
+        })
+        .sort((a, b) => a.name.localeCompare(b.name));
 }
 
 function handleSearch(event) {
@@ -92,7 +113,7 @@ function handleSearch(event) {
         const results = filterRecipes(query);
         renderRecipes(results, query.split(/\s+/));
     } else {
-        // If empty search, show a random recipe
+        // Empty search resets to random recipe
         renderRecipes([getRandomRecipe(recipes)]);
     }
 }
@@ -101,13 +122,12 @@ function handleSearch(event) {
   Initialize Page
 ===============================*/
 function init() {
-    // Show a random recipe on page load
+    // Show random recipe on page load
     renderRecipes([getRandomRecipe(recipes)]);
 
-    // Attach search handler
+    // Search listener
     const searchForm = document.getElementById('searchForm');
     searchForm.addEventListener('submit', handleSearch);
 }
 
-// Run init when page loads
 init();
