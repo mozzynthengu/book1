@@ -1,4 +1,121 @@
 /*==============================
+  Google Fonts
+===============================*/
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
+
+/*==============================
+  CSS Variables
+===============================*/
+:root {
+    --primary-color: #1B98E0;
+    --secondary-color: #59c3c3;
+    --text-dark: #333;
+    --text-light: #fff;
+    --primary-font: Arial, Helvetica, sans-serif;
+    --secondary-font: "Amatic SC", cursive;
+}
+
+/*==============================
+  General Styles
+===============================*/
+body {
+    margin: 0;
+    font-family: var(--primary-font);
+    background-color: #fefefe;
+    color: var(--text-dark);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+/*==============================
+  Header Section
+===============================*/
+header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 1rem;
+    text-align: center;
+}
+
+header .logo img {
+    height: 50px;
+    vertical-align: middle;
+}
+
+header .logo h1 {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 1.5rem;
+    vertical-align: middle;
+}
+
+/*==============================
+  Search Section
+===============================*/
+form#searchForm {
+    width: 95%;
+    max-width: 1500px;
+    margin: 1.5rem auto;
+    display: flex;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #fff;
+    transition: border-color 0.3s ease;
+}
+
+form#searchForm:focus-within {
+    border-color: var(--primary-color);
+}
+
+form#searchForm input[type="text"] {
+    flex: 1;
+    padding: 0.9rem 1rem;
+    font-size: 1.05rem;
+    border: none;
+    outline: none;
+}
+
+form#searchForm input[type="text"]:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+form#searchForm button {
+    width: 55px;
+    background: #eee;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.25s ease;
+}
+
+form#searchForm button:hover,
+form#searchForm button:focus {
+    background: #ddd;
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+form#searchForm button img.search-icon {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+/*==============================
   Recipe Card Section
 ===============================*/
 #recipe-list {
@@ -22,7 +139,8 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.recipe-card:hover {
+.recipe-card:hover,
+.recipe-card:focus-within {
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
@@ -31,7 +149,7 @@
     flex: 1;
     overflow: hidden;
     position: relative;
-    aspect-ratio: 16 / 9; /* prevents layout shifts */
+    aspect-ratio: 16 / 9;
 }
 
 .recipe-card .image-container img {
@@ -77,7 +195,7 @@
 }
 
 h3.tag-color {
-    color: var(--primary-color);
+    color: #1B98E0; /* high contrast on white background */
     font-size: 2rem;
 }
 
@@ -91,15 +209,12 @@ h3.tag-color {
 }
 
 /*==============================
-  Footer
-===============================*/
-/*==============================
-  Footer - High Contrast & Accessibility
+  Footer Section
 ===============================*/
 footer {
     background-color: #007a7a; /* darker teal for better contrast */
     padding: 1rem;
-    color: #ffffff; /* bright white text */
+    color: #ffffff;
 }
 
 footer .footer-content {
@@ -117,12 +232,15 @@ footer .attribution {
 }
 
 footer .attribution a.footer-link {
-    color: #ffffff; /* high contrast against dark background */
+    color: #ffffff;
     text-decoration: underline;
 }
 
-footer .attribution a.footer-link:hover {
-    color: #fffae6; /* slight off-white on hover for feedback */
+footer .attribution a.footer-link:hover,
+footer .attribution a.footer-link:focus {
+    color: #fffae6;
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
 }
 
 footer .social {
@@ -130,33 +248,23 @@ footer .social {
     gap: 10px;
 }
 
+footer .social a:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
 footer .social img {
     width: 30px;
     height: 30px;
-    filter: brightness(0) invert(1); /* keeps icons visible */
+    filter: brightness(0) invert(1);
     transition: opacity 0.25s ease;
 }
 
-footer .social img:hover {
+footer .social img:hover,
+footer .social img:focus {
     opacity: 0.7;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    footer .footer-content {
-        flex-direction: column-reverse;
-        gap: 0.7rem;
-        text-align: center;
-    }
-}
-
-@media (min-width: 769px) {
-    footer .footer-content {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
-    }
-}
 /*==============================
   Responsive
 ===============================*/
