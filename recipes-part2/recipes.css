@@ -270,13 +270,3 @@ footer .social img:hover {
         text-align: left;
     }
 }
-/*===========*/
-footer {
-    background-color: #1a6f6f; /* darker teal for strong contrast */
-    color: white;
-}
-
-footer .attribution a {
-    color: white; 
-    text-decoration: none;
-}
