@@ -149,7 +149,7 @@ form#searchForm button img.search-icon {
     flex: 1;
     overflow: hidden;
     position: relative;
-    aspect-ratio: 16 / 9;
+    min-height: 200px;
 }
 
 .recipe-card .image-container img {
@@ -194,11 +194,6 @@ form#searchForm button img.search-icon {
     border-color: var(--text-dark);
 }
 
-h3.tag-color {
-    color: #1B98E0; /* high contrast on white background */
-    font-size: 2rem;
-}
-
 .rating {
     font-size: 1.1rem;
     margin: 0.5rem 0;
@@ -209,15 +204,12 @@ h3.tag-color {
 }
 
 /*==============================
-  Footer Section
+  Footer
 ===============================*/
-/*==============================
-  Footer Section
-==============================*/
 footer {
-    background-color: #005959; /* darker teal for maximum contrast */
+    background-color: var(--secondary-color);
     padding: 1rem;
-    color: #ffffff;
+    color: var(--text-light);
 }
 
 footer .footer-content {
@@ -229,32 +221,19 @@ footer .footer-content {
     flex-wrap: wrap;
 }
 
-footer .attribution {
-    font-size: 0.9rem;
-    line-height: 1.4;
-}
-
 footer .attribution a.footer-link {
     color: #ffffff;
     text-decoration: underline;
+    font-size: 0.9rem;
 }
 
-footer .attribution a.footer-link:hover,
-footer .attribution a.footer-link:focus {
+footer .attribution a.footer-link:hover {
     color: #fffae6;
-    outline: 2px solid #ffffff;
-    outline-offset: 2px;
 }
 
-/* Social icons */
 footer .social {
     display: flex;
     gap: 10px;
-}
-
-footer .social a:focus {
-    outline: 2px solid #ffffff;
-    outline-offset: 2px;
 }
 
 footer .social img {
@@ -270,67 +249,28 @@ footer .social img:focus {
 }
 
 /*==============================
-  Responsive Footer
-==============================*/
-/*==============================
-  Mobile Responsive Adjustments
+  Responsive
 ===============================*/
-/*==============================
-  Mobile Responsive Styles
-==============================*/
 @media (max-width: 768px) {
-
-    /* Recipe card adjustments */
     .recipe-card {
-        flex-direction: column;   /* stack image and content */
-        height: auto;             /* remove fixed height */
-        min-height: auto;         /* no minimum height */
-        margin: 1.5rem 0;         /* spacing between cards */
-    }
-
-    .recipe-card .image-container {
-        width: 100%;
-        aspect-ratio: 16/9;       /* maintain image ratio */
-        overflow: hidden;
-    }
-
-    .recipe-card .image-container img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;        /* image fills container */
-        display: block;
-        transition: transform 0.3s ease;
-    }
-
-    .recipe-card .image-container img:hover {
-        transform: scale(1.05);
-    }
-
-    .recipe-content {
-        width: 100%;
-        padding: 2rem;            /* smaller padding on mobile */
-        display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        height: auto;
+    }
+    .recipe-content {
+        padding: 2rem;
     }
 
-    /* Tags wrap and spacing */
-    .recipe__tags {
-        flex-wrap: wrap;
-        gap: 0.3rem;
-        margin-bottom: 0.5rem;
-    }
-
-    /* Text adjustments */
-    h2, .description, .prep-time {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-    }
-
-    /* Footer adjustments */
     footer .footer-content {
         flex-direction: column-reverse;
         gap: 0.7rem;
         text-align: center;
+    }
+}
+
+@media (min-width: 769px) {
+    footer .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
     }
 }
