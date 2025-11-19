@@ -211,8 +211,11 @@ h3.tag-color {
 /*==============================
   Footer Section
 ===============================*/
+/*==============================
+  Footer Section
+==============================*/
 footer {
-    background-color: #007a7a; /* darker teal for better contrast */
+    background-color: #005959; /* darker teal for maximum contrast */
     padding: 1rem;
     color: #ffffff;
 }
@@ -243,6 +246,7 @@ footer .attribution a.footer-link:focus {
     outline-offset: 2px;
 }
 
+/* Social icons */
 footer .social {
     display: flex;
     gap: 10px;
@@ -266,18 +270,9 @@ footer .social img:focus {
 }
 
 /*==============================
-  Responsive
-===============================*/
+  Responsive Footer
+==============================*/
 @media (max-width: 768px) {
-    .recipe-card {
-        flex-direction: column;
-        height: auto;
-        min-height: 100vh;
-    }
-    .recipe-content {
-        padding: 2rem;
-    }
-
     footer .footer-content {
         flex-direction: column-reverse;
         gap: 0.7rem;
