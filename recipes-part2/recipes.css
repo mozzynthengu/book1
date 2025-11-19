@@ -1,11 +1,5 @@
-/*==============================
-  Google Fonts
-===============================*/
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
 
-/*==============================
-  CSS Variables
-===============================*/
 :root {
     --primary-color: #1B98E0;
     --secondary-color: #59c3c3;
@@ -15,9 +9,6 @@
     --secondary-font: "Amatic SC", cursive;
 }
 
-/*==============================
-  General Styles
-===============================*/
 body {
     margin: 0;
     font-family: var(--primary-font);
@@ -30,20 +21,9 @@ img {
     height: auto;
 }
 
-.visually-hidden {
-    position: absolute !important;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    clip: rect(1px, 1px, 1px, 1px);
-}
-
-/*==============================
-  Header Section
-===============================*/
 header {
     background-color: var(--primary-color);
-    color: var(--text-light);
+    color: white;
     padding: 1rem;
     text-align: center;
 }
@@ -60,9 +40,6 @@ header .logo h1 {
     vertical-align: middle;
 }
 
-/*==============================
-  Search Section
-===============================*/
 form#searchForm {
     width: 95%;
     max-width: 1500px;
@@ -84,12 +61,6 @@ form#searchForm input[type="text"] {
     padding: 0.9rem 1rem;
     font-size: 1.05rem;
     border: none;
-    outline: none;
-}
-
-form#searchForm input[type="text"]:focus {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
 }
 
 form#searchForm button {
@@ -103,35 +74,21 @@ form#searchForm button {
     transition: background 0.25s ease;
 }
 
-form#searchForm button:hover,
-form#searchForm button:focus {
+form#searchForm button:hover {
     background: #ddd;
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
 }
 
-form#searchForm button img.search-icon {
-    width: 1.4rem;
-    height: 1.4rem;
-}
-
-/*==============================
-  Recipe Card Section
-===============================*/
 #recipe-list {
     padding: 2rem;
     box-sizing: border-box;
-    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
-    background-image: 
-        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-    background-size: 40px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .recipe-card {
     display: flex;
-    width: 100%;
-    margin: 2rem auto;
+    flex-direction: row;
     background: rgba(255, 255, 255, 0.95);
     border-radius: 16px;
     overflow: hidden;
@@ -139,33 +96,31 @@ form#searchForm button img.search-icon {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.recipe-card:hover,
-.recipe-card:focus-within {
+.recipe-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-.recipe-card .image-container {
+.image-container {
     flex: 1;
     overflow: hidden;
     position: relative;
-    min-height: 200px;
 }
 
-.recipe-card .image-container img {
+.image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
 
-.recipe-card .image-container img:hover {
+.image-container img:hover {
     transform: scale(1.05);
 }
 
 .recipe-content {
     flex: 1;
-    padding: 3rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -189,26 +144,17 @@ form#searchForm button img.search-icon {
     font-weight: bold;
 }
 
-.recipe__tags li.title-color {
-    color: var(--text-dark);
-    border-color: var(--text-dark);
-}
-
 .rating {
     font-size: 1.1rem;
     margin: 0.5rem 0;
 }
 
-.description {
+.recipe__description {
     font-size: 1rem;
 }
 
-/*==============================
-  Footer
-===============================*/
-/* Footer Styles */
 footer {
-    background-color: var(--secondary-color); /* teal-ish background */
+    background-color: var(--secondary-color);
     padding: 1rem;
     color: var(--text-light);
 }
@@ -223,22 +169,9 @@ footer .footer-content {
 }
 
 footer .attribution a.footer-link {
-<<<<<<< HEAD
     color: #ffffff;
     text-decoration: underline;
-=======
-    color: #ffffff; /* bright white for high contrast */
-    text-decoration: underline; /* optional: underline improves accessibility */
->>>>>>> 157f96f (Optimize images, add width/height attributes, improve accessibility and mobile layout)
     font-size: 0.9rem;
-}
-
-footer .attribution a.footer-link:hover {
-<<<<<<< HEAD
-    color: #fffae6;
-=======
-    color: #fffae6; /* slightly off-white on hover for visual feedback */
->>>>>>> 157f96f (Optimize images, add width/height attributes, improve accessibility and mobile layout)
 }
 
 footer .social {
@@ -253,34 +186,22 @@ footer .social img {
     transition: opacity 0.25s ease;
 }
 
-footer .social img:hover,
-footer .social img:focus {
+footer .social img:hover {
     opacity: 0.7;
 }
 
-/*==============================
-  Responsive
-===============================*/
 @media (max-width: 768px) {
     .recipe-card {
         flex-direction: column;
-        height: auto;
+        min-height: auto;
     }
     .recipe-content {
-        padding: 2rem;
+        padding: 1.5rem;
     }
 
     footer .footer-content {
         flex-direction: column-reverse;
         gap: 0.7rem;
         text-align: center;
-    }
-}
-
-@media (min-width: 769px) {
-    footer .footer-content {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
     }
 }
