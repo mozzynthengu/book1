@@ -10,7 +10,7 @@
     --primary-color: #1B98E0;
     --secondary-color: #59c3c3;
     --text-dark: #333;
-    --text-light: #fff;
+    --text-light: #ebebeb;
     --primary-font: Arial, Helvetica, sans-serif;
     --secondary-font: "Amatic SC", cursive;
 }
@@ -28,14 +28,6 @@ body {
 img {
     max-width: 100%;
     height: auto;
-}
-
-.visually-hidden {
-    position: absolute !important;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    clip: rect(1px, 1px, 1px, 1px);
 }
 
 /*==============================
@@ -65,7 +57,7 @@ header .logo h1 {
 ===============================*/
 form#searchForm {
     width: 95%;
-    max-width: 1500px;
+    max-width: 650px;
     margin: 1.5rem auto;
     display: flex;
     border: 2px solid #ccc;
@@ -107,60 +99,47 @@ form#searchForm button img.search-icon {
 }
 
 /*==============================
-  Recipe Card Section
+  FULL-SCREEN Recipe Card Section
 ===============================*/
+
+/* inset the card from the edges */
 #recipe-list {
     padding: 2rem;
     box-sizing: border-box;
-    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
-    background-image: 
-        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-    background-size: 40px 40px;
 }
 
 .recipe-card {
     display: flex;
-    height: calc(100vh - 4rem);
+    height: calc(100vh - 4rem); /* full screen minus padding */
     width: 100%;
-    margin: 2rem auto;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 16px;
+    background: gray;          /* OUTER BACKGROUND */
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 16px;
 }
 
-.recipe-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-}
-
+/* Left side image */
 .recipe-card .image-container {
     flex: 1;
     overflow: hidden;
-    position: relative;
 }
 
 .recipe-card .image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
 }
 
-.recipe-card .image-container img:hover {
-    transform: scale(1.05);
-}
-
+/* Right side content */
 .recipe-content {
     flex: 1;
     padding: 3rem;
+    background: white;        /* INNER BACKGROUND */
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
+/* Tags */
 .recipe__tags {
     list-style: none;
     padding: 0;
@@ -189,23 +168,13 @@ h3.tag-color {
     font-size: 2rem;
 }
 
-.rating {
-    font-size: 1.1rem;
-    margin: 0.5rem 0;
-}
-
-.description {
-    font-size: 1rem;
-}
-
 /*==============================
   Footer
 ===============================*/
-/* Footer Styles */
 footer {
-    background-color: var(--secondary-color); /* teal-ish background */
+    background-color: var(--secondary-color);
     padding: 1rem;
-    color: var(--text-light);
+    color: white;
 }
 
 footer .footer-content {
@@ -217,14 +186,15 @@ footer .footer-content {
     flex-wrap: wrap;
 }
 
-footer .attribution a.footer-link {
-    color: #ffffff; /* bright white for high contrast */
-    text-decoration: underline; /* optional: underline improves accessibility */
-    font-size: 0.9rem;
+footer .attribution a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.8rem;
+    opacity: 0.9;
 }
 
-footer .attribution a.footer-link:hover {
-    color: #fffae6; /* slightly off-white on hover for visual feedback */
+footer .attribution a:hover {
+    opacity: 1;
 }
 
 footer .social {
@@ -244,7 +214,7 @@ footer .social img:hover {
 }
 
 /*==============================
-  Responsive
+  Responsive Styles
 ===============================*/
 @media (max-width: 768px) {
     .recipe-card {
@@ -252,10 +222,13 @@ footer .social img:hover {
         height: auto;
         min-height: 100vh;
     }
+
     .recipe-content {
         padding: 2rem;
     }
+}
 
+@media (max-width: 500px) {
     footer .footer-content {
         flex-direction: column-reverse;
         gap: 0.7rem;
@@ -263,10 +236,10 @@ footer .social img:hover {
     }
 }
 
-@media (min-width: 769px) {
-    footer .footer-content {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
+@media (min-width: 900px) {
+    form#searchForm {
+        width: 100%;
+        max-width: none;
+        margin: 2rem auto;
     }
 }
