@@ -201,10 +201,11 @@ h3.tag-color {
 /*==============================
   Footer
 ===============================*/
+/* Footer Styles */
 footer {
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color); /* teal-ish background */
     padding: 1rem;
-    color: white;
+    color: var(--text-light);
 }
 
 footer .footer-content {
@@ -216,15 +217,14 @@ footer .footer-content {
     flex-wrap: wrap;
 }
 
-footer .attribution a {
-    color: white;
-    text-decoration: none;
-    font-size: 0.8rem;
-    opacity: 0.9;
+footer .attribution a.footer-link {
+    color: #ffffff; /* bright white for high contrast */
+    text-decoration: underline; /* optional: underline improves accessibility */
+    font-size: 0.9rem;
 }
 
-footer .attribution a:hover {
-    opacity: 1;
+footer .attribution a.footer-link:hover {
+    color: #fffae6; /* slightly off-white on hover for visual feedback */
 }
 
 footer .social {
