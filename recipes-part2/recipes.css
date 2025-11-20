@@ -1,5 +1,11 @@
+/*==============================
+  Google Fonts
+===============================*/
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
 
+/*==============================
+  CSS Variables
+===============================*/
 :root {
     --primary-color: #1B98E0;
     --secondary-color: #59c3c3;
@@ -9,6 +15,9 @@
     --secondary-font: "Amatic SC", cursive;
 }
 
+/*==============================
+  General Styles
+===============================*/
 body {
     margin: 0;
     font-family: var(--primary-font);
@@ -21,6 +30,17 @@ img {
     height: auto;
 }
 
+.visually-hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+/*==============================
+  Header Section
+===============================*/
 header {
     background-color: var(--primary-color);
     color: white;
@@ -40,6 +60,9 @@ header .logo h1 {
     vertical-align: middle;
 }
 
+/*==============================
+  Search Section
+===============================*/
 form#searchForm {
     width: 95%;
     max-width: 1500px;
@@ -78,17 +101,29 @@ form#searchForm button:hover {
     background: #ddd;
 }
 
+form#searchForm button img.search-icon {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+/*==============================
+  Recipe Card Section
+===============================*/
 #recipe-list {
     padding: 2rem;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
 }
 
 .recipe-card {
     display: flex;
-    flex-direction: row;
+    height: calc(100vh - 4rem);
+    width: 100%;
+    margin: 2rem auto;
     background: rgba(255, 255, 255, 0.95);
     border-radius: 16px;
     overflow: hidden;
@@ -101,26 +136,26 @@ form#searchForm button:hover {
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-.image-container {
+.recipe-card .image-container {
     flex: 1;
     overflow: hidden;
     position: relative;
 }
 
-.image-container img {
+.recipe-card .image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
 
-.image-container img:hover {
+.recipe-card .image-container img:hover {
     transform: scale(1.05);
 }
 
 .recipe-content {
     flex: 1;
-    padding: 2rem;
+    padding: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -144,19 +179,32 @@ form#searchForm button:hover {
     font-weight: bold;
 }
 
+.recipe__tags li.title-color {
+    color: var(--text-dark);
+    border-color: var(--text-dark);
+}
+
+h3.tag-color {
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
 .rating {
     font-size: 1.1rem;
     margin: 0.5rem 0;
 }
 
-.recipe__description {
+.description {
     font-size: 1rem;
 }
 
+/*==============================
+  Footer
+===============================*/
 footer {
     background-color: var(--secondary-color);
     padding: 1rem;
-    color: var(--text-light);
+    color: white;
 }
 
 footer .footer-content {
@@ -168,10 +216,15 @@ footer .footer-content {
     flex-wrap: wrap;
 }
 
-footer .attribution a.footer-link {
-    color: #ffffff;
-    text-decoration: underline;
-    font-size: 0.9rem;
+footer .attribution a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+footer .attribution a:hover {
+    opacity: 1;
 }
 
 footer .social {
@@ -190,18 +243,30 @@ footer .social img:hover {
     opacity: 0.7;
 }
 
+/*==============================
+  Responsive
+===============================*/
 @media (max-width: 768px) {
     .recipe-card {
         flex-direction: column;
-        min-height: auto;
+        height: auto;
+        min-height: 100vh;
     }
     .recipe-content {
-        padding: 1.5rem;
+        padding: 2rem;
     }
 
     footer .footer-content {
         flex-direction: column-reverse;
         gap: 0.7rem;
         text-align: center;
+    }
+}
+
+@media (min-width: 769px) {
+    footer .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
     }
 }
