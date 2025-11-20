@@ -1,10 +1,10 @@
 /*==============================
-  Google Fonts
+  1. Google Fonts
 ===============================*/
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
 
 /*==============================
-  CSS Variables
+  2. CSS Variables
 ===============================*/
 :root {
     --primary-color: #1B98E0;
@@ -16,7 +16,7 @@
 }
 
 /*==============================
-  General Styles
+  3. General Styles
 ===============================*/
 body {
     margin: 0;
@@ -39,7 +39,7 @@ img {
 }
 
 /*==============================
-  Header Section
+  4. Header Section
 ===============================*/
 header {
     background-color: var(--primary-color);
@@ -61,7 +61,7 @@ header .logo h1 {
 }
 
 /*==============================
-  Search Section
+  5. Search Section
 ===============================*/
 form#searchForm {
     width: 95%;
@@ -97,8 +97,9 @@ form#searchForm button {
     transition: background 0.25s ease;
 }
 
-form#searchForm button:hover {
-    background: #ddd;
+form#searchForm button:hover,
+form#searchForm button:focus {
+    background-color: #ddd;
 }
 
 form#searchForm button img.search-icon {
@@ -107,7 +108,7 @@ form#searchForm button img.search-icon {
 }
 
 /*==============================
-  Recipe Card Section
+  6. Recipe Card Section
 ===============================*/
 #recipe-list {
     padding: 2rem;
@@ -121,7 +122,7 @@ form#searchForm button img.search-icon {
 
 .recipe-card {
     display: flex;
-    flex-direction: column; /* default = mobile */
+    height: calc(100vh - 4rem);
     width: 100%;
     margin: 2rem auto;
     background: rgba(255, 255, 255, 0.95);
@@ -131,14 +132,16 @@ form#searchForm button img.search-icon {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.recipe-card:hover {
+.recipe-card:hover,
+.recipe-card:focus-within {
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
 .recipe-card .image-container {
-    width: 100%;
+    flex: 1;
     overflow: hidden;
+    position: relative;
 }
 
 .recipe-card .image-container img {
@@ -148,12 +151,19 @@ form#searchForm button img.search-icon {
     transition: transform 0.3s ease;
 }
 
-.recipe-card .image-container img:hover {
+.recipe-card .image-container img:hover,
+.recipe-card .image-container img:focus {
     transform: scale(1.05);
+    outline: 3px solid #ffbf47; /* focus indicator for keyboard */
+    outline-offset: 2px;
 }
 
 .recipe-content {
-    padding: 2rem;
+    flex: 1;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .recipe__tags {
@@ -179,7 +189,7 @@ form#searchForm button img.search-icon {
     border-color: var(--text-dark);
 }
 
-h3.tag-color {
+h2 {
     color: var(--primary-color);
     font-size: 2rem;
 }
@@ -193,9 +203,6 @@ h3.tag-color {
     font-size: 1rem;
 }
 
-/*==============================
-  Footer
-===============================*/
 /*==============================
   7. Footer
 ===============================*/
@@ -216,18 +223,21 @@ footer .footer-content {
 
 footer .attribution a {
     color: #ffffff; /* high-contrast white */
-    background-color: #007d7d; /* darker teal for contrast */
+    background-color: #007d7d; /* darker teal */
     text-decoration: none;
     font-size: 0.8rem;
-    opacity: 1; /* full opacity for readability */
+    opacity: 1;
     padding: 0.2rem 0.4rem;
     border-radius: 3px;
     transition: opacity 0.25s ease, background-color 0.25s ease;
 }
 
-footer .attribution a:hover {
+footer .attribution a:hover,
+footer .attribution a:focus {
     opacity: 0.85;
-    background-color: #005f5f; /* slightly darker on hover */
+    background-color: #005f5f; /* darker on hover/focus */
+    outline: 3px dashed #ffbf47; /* keyboard focus */
+    outline-offset: 3px;
 }
 
 footer .social {
@@ -242,38 +252,47 @@ footer .social img {
     transition: opacity 0.25s ease;
 }
 
-footer .social img:hover {
+footer .social img:hover,
+footer .social img:focus {
     opacity: 0.7;
+    outline: 3px dashed #ffbf47;
+    outline-offset: 2px;
 }
 
 /*==============================
-  RESPONSIVE BREAKPOINTS
+  8. Responsive
 ===============================*/
-
-/* ⭐ First breakpoint — 600px  
-   Change layout to side-by-side instead of stacked */
-@media (min-width: 600px) {
+@media (max-width: 768px) {
     .recipe-card {
-        flex-direction: row;
+        flex-direction: column;
         height: auto;
+        min-height: 100vh;
     }
-
-    .recipe-card .image-container {
-        flex: 1;
-    }
-
     .recipe-content {
-        flex: 1;
-        padding: 3rem;
+        padding: 2rem;
+    }
+
+    footer .footer-content {
+        flex-direction: column-reverse;
+        gap: 0.7rem;
+        text-align: center;
     }
 }
 
-/* ⭐ Second breakpoint — 960px  
-   Prevent layout from stretching too wide */
-@media (min-width: 960px) {
-    main,
-    #recipe-list {
-        max-width: 960px;
-        margin: 0 auto;
+@media (min-width: 769px) {
+    footer .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
     }
+}
+
+/*==============================
+  9. Accessibility Focus & Hover Styles
+===============================*/
+a:focus,
+footer .footer-link:focus,
+button:focus {
+    outline: 3px dashed #ffbf47;
+    outline-offset: 3px;
 }
