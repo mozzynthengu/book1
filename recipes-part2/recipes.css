@@ -121,7 +121,7 @@ form#searchForm button img.search-icon {
 
 .recipe-card {
     display: flex;
-    height: calc(100vh - 4rem);
+    flex-direction: column; /* default = mobile */
     width: 100%;
     margin: 2rem auto;
     background: rgba(255, 255, 255, 0.95);
@@ -137,9 +137,8 @@ form#searchForm button img.search-icon {
 }
 
 .recipe-card .image-container {
-    flex: 1;
+    width: 100%;
     overflow: hidden;
-    position: relative;
 }
 
 .recipe-card .image-container img {
@@ -154,11 +153,7 @@ form#searchForm button img.search-icon {
 }
 
 .recipe-content {
-    flex: 1;
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 2rem;
 }
 
 .recipe__tags {
@@ -204,7 +199,7 @@ h3.tag-color {
 footer {
     background-color: var(--secondary-color);
     padding: 1rem;
-    color: var(--text-light);
+    color: white;
 }
 
 footer .footer-content {
@@ -216,22 +211,15 @@ footer .footer-content {
     flex-wrap: wrap;
 }
 
-footer .attribution {
-    font-weight: bold;       /* Make text bold for clarity */
-    color: #ffffff;          /* High contrast text */
-    font-size: 0.9rem;
+footer .attribution a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.8rem;
+    opacity: 0.9;
 }
 
-footer .attribution a.footer-link {
-    color: #ffffff;
-    font-weight: bold;
-    text-decoration: underline;
-    background-color: transparent;
+footer .attribution a:hover {
     opacity: 1;
-}
-
-footer .attribution a.footer-link:hover {
-    color: #fffae6;
 }
 
 footer .social {
@@ -251,29 +239,33 @@ footer .social img:hover {
 }
 
 /*==============================
-  Responsive
+  RESPONSIVE BREAKPOINTS
 ===============================*/
-@media (max-width: 768px) {
+
+/* ⭐ First breakpoint — 600px  
+   Change layout to side-by-side instead of stacked */
+@media (min-width: 600px) {
     .recipe-card {
-        flex-direction: column;
+        flex-direction: row;
         height: auto;
-        min-height: 100vh;
-    }
-    .recipe-content {
-        padding: 2rem;
     }
 
-    footer .footer-content {
-        flex-direction: column-reverse;
-        gap: 0.7rem;
-        text-align: center;
+    .recipe-card .image-container {
+        flex: 1;
+    }
+
+    .recipe-content {
+        flex: 1;
+        padding: 3rem;
     }
 }
 
-@media (min-width: 769px) {
-    footer .footer-content {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
+/* ⭐ Second breakpoint — 960px  
+   Prevent layout from stretching too wide */
+@media (min-width: 960px) {
+    main,
+    #recipe-list {
+        max-width: 960px;
+        margin: 0 auto;
     }
 }
