@@ -5,7 +5,7 @@ function random(num) {
     return Math.floor(Math.random() * num);
 }
 
-// Get random recipe from a list
+// Get a random recipe
 function getRandomRecipe(list) {
     return list[random(list.length)];
 }
@@ -15,10 +15,10 @@ function tagsTemplate(tags) {
     return tags.map(tag => `<li>${tag}</li>`).join('');
 }
 
-// Ratings template
+// Ratings template (accessible)
 function ratingTemplate(rating) {
-    let html = `<span class="rating" role="img" aria-label="Rating: ${rating} out of 5 stars">`;
     const fullStars = Math.floor(rating);
+    let html = `<span class="rating" role="img" aria-label="Rating: ${rating} out of 5 stars">`;
     for (let i = 1; i <= 5; i++) {
         html += i <= fullStars
             ? `<span aria-hidden="true" class="icon-star">⭐</span>`
@@ -28,30 +28,26 @@ function ratingTemplate(rating) {
     return html;
 }
 
-// Recipe HTML template
+// Recipe HTML template (optimized)
 function recipeTemplate(recipe, highlightWords = []) {
     let name = recipe.name;
     let description = recipe.description;
 
+    // Highlight words for search
     highlightWords.forEach(word => {
         const regex = new RegExp(`(${word})`, 'gi');
         name = name.replace(regex, '<mark>$1</mark>');
         description = description.replace(regex, '<mark>$1</mark>');
     });
 
-    // Wrap name in link only if recipe.url exists
-    const titleHTML = recipe.url
-        ? `<h2><a href="${recipe.url}">${name}</a></h2>`
-        : `<h2>${name}</h2>`;
-
     return `
     <div class="recipe-card">
         <div class="image-container">
-            <img src="${recipe.image}" alt="Image of ${recipe.name}" width="400" height="300">
+            <img src="${recipe.image}" alt="Image of ${recipe.name}" width="400" height="300" loading="lazy">
         </div>
         <div class="recipe-content">
             <ul class="recipe__tags">${tagsTemplate(recipe.tags)}</ul>
-            ${titleHTML}
+            <h2><a href="${recipe.url || '#'}">${name}</a></h2>
             <p class="recipe__ratings">${ratingTemplate(recipe.rating)}</p>
             <p class="recipe__description">${description}</p>
             <p class="prep-time"><strong>Prep Time:</strong> ${recipe.prepTime}</p>
@@ -59,7 +55,7 @@ function recipeTemplate(recipe, highlightWords = []) {
     </div>`;
 }
 
-// Render recipes in the container
+// Render recipes in container
 function renderRecipes(list, highlightWords = []) {
     const container = document.getElementById('recipe-list');
     if (!list.length) {
@@ -69,7 +65,7 @@ function renderRecipes(list, highlightWords = []) {
     }
 }
 
-// Filter recipes based on search query
+// Search filter
 function filterRecipes(query) {
     const words = query.toLowerCase().split(/\s+/).filter(Boolean);
     return recipes
@@ -84,7 +80,7 @@ function filterRecipes(query) {
         .sort((a, b) => a.name.localeCompare(b.name));
 }
 
-// Handle search form submission
+// Search handler
 function handleSearch(event) {
     event.preventDefault();
     const input = document.querySelector('#searchForm input[type="text"]');
