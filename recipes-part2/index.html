@@ -16,6 +16,9 @@
 
     <title>Recipe Book</title>
 
+    <!-- Preload Google Fonts for faster FCP -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
     <!-- CSS -->
     <link rel="stylesheet" href="recipes.css">
 </head>
@@ -24,7 +27,7 @@
 <!-- HEADER -->
 <header>
     <div class="logo">
-        <img src="images/recipe-book.png" alt="Recipe Book Logo">
+        <img src="images/recipe-book.png" alt="Recipe Book Logo" width="50" height="50">
         <h1>Recipe Book</h1>
     </div>
 </header>
@@ -37,7 +40,7 @@
             <label for="search" class="visually-hidden">Search recipes</label>
             <input type="text" id="search" name="search" placeholder="Find a recipe">
             <button type="submit">
-                <img src="images/search.svg" alt="Search" class="search-icon">
+                <img src="images/search.svg" alt="Search" class="search-icon" width="22" height="22">
             </button>
         </form>
     </section>
@@ -46,28 +49,23 @@
 
     <!-- RECIPE LIST -->
     <section id="recipe-list">
-        <!-- Recipes will be dynamically injected here by JS -->
+        <h2 class="visually-hidden">Recipes</h2>
+        <!-- Recipes will be rendered here by JS -->
     </section>
 </main>
 
+<!-- FOOTER -->
 <footer>
-  <div class="footer-content">
-    <p class="attribution">
-      <a href="https://www.flaticon.com/free-icons/recipe" 
-         title="recipe icons" 
-         class="footer-link">
-        Recipe icons created by Freepik - Flaticon
-      </a>
-    </p>
-    <div class="social">
-      <a href="#"><img src="images/instagram_icon.svg" alt="Follow us on Instagram"></a>
-      <a href="#"><img src="images/youtube_icon.svg" alt="Subscribe to our YouTube channel"></a>
-      <a href="#"><img src="images/pinterest_icon.svg" alt="Follow us on Pinterest"></a>
+    <div class="footer-content">
+        <div class="social">
+            <a href="#"><img src="images/instagram_icon.svg" alt="Instagram" width="30" height="30"></a>
+            <a href="#"><img src="images/youtube_icon.svg" alt="YouTube" width="30" height="30"></a>
+            <a href="#"><img src="images/pinterest_icon.svg" alt="Pinterest" width="30" height="30"></a>
+        </div>
     </div>
-  </div>
 </footer>
 
-
-<script type="module" src="main.js"></script>
+<!-- JS -->
+<script type="module" src="main.js" defer></script>
 </body>
 </html>
