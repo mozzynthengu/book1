@@ -5,7 +5,6 @@ function random(num) {
     return Math.floor(Math.random() * num);
 }
 
-// Get a random recipe
 function getRandomRecipe(list) {
     return list[random(list.length)];
 }
@@ -15,10 +14,10 @@ function tagsTemplate(tags) {
     return tags.map(tag => `<li>${tag}</li>`).join('');
 }
 
-// Ratings template (accessible)
+// Ratings template
 function ratingTemplate(rating) {
-    const fullStars = Math.floor(rating);
     let html = `<span class="rating" role="img" aria-label="Rating: ${rating} out of 5 stars">`;
+    const fullStars = Math.floor(rating);
     for (let i = 1; i <= 5; i++) {
         html += i <= fullStars
             ? `<span aria-hidden="true" class="icon-star">⭐</span>`
@@ -28,12 +27,11 @@ function ratingTemplate(rating) {
     return html;
 }
 
-// Recipe HTML template (optimized)
+// Recipe HTML template
 function recipeTemplate(recipe, highlightWords = []) {
     let name = recipe.name;
     let description = recipe.description;
 
-    // Highlight words for search
     highlightWords.forEach(word => {
         const regex = new RegExp(`(${word})`, 'gi');
         name = name.replace(regex, '<mark>$1</mark>');
@@ -43,7 +41,7 @@ function recipeTemplate(recipe, highlightWords = []) {
     return `
     <div class="recipe-card">
         <div class="image-container">
-            <img src="${recipe.image}" alt="Image of ${recipe.name}" width="400" height="300" loading="lazy">
+            <img src="${recipe.image}" alt="Image of ${recipe.name}" width="400" height="300">
         </div>
         <div class="recipe-content">
             <ul class="recipe__tags">${tagsTemplate(recipe.tags)}</ul>
@@ -55,7 +53,7 @@ function recipeTemplate(recipe, highlightWords = []) {
     </div>`;
 }
 
-// Render recipes in container
+// Render recipes
 function renderRecipes(list, highlightWords = []) {
     const container = document.getElementById('recipe-list');
     if (!list.length) {
@@ -80,7 +78,6 @@ function filterRecipes(query) {
         .sort((a, b) => a.name.localeCompare(b.name));
 }
 
-// Search handler
 function handleSearch(event) {
     event.preventDefault();
     const input = document.querySelector('#searchForm input[type="text"]');
@@ -92,7 +89,7 @@ function handleSearch(event) {
     }
 }
 
-// Initialize page
+// Initialize
 function init() {
     renderRecipes([getRandomRecipe(recipes)]);
     document.getElementById('searchForm').addEventListener('submit', handleSearch);
