@@ -1,6 +1,11 @@
+// ==============================
+// 1. Import Recipes Data
+// ==============================
 import recipes from './recipes.mjs';
 
-// Random number helper
+// ==============================
+// 2. Random Number Helper Functions
+// ==============================
 function random(num) {
     return Math.floor(Math.random() * num);
 }
@@ -9,12 +14,16 @@ function getRandomRecipe(list) {
     return list[random(list.length)];
 }
 
-// Tags template
+// ==============================
+// 3. Template Functions
+// ==============================
+
+// 3a. Tags HTML Template
 function tagsTemplate(tags) {
     return tags.map(tag => `<li>${tag}</li>`).join('');
 }
 
-// Ratings template
+// 3b. Ratings HTML Template
 function ratingTemplate(rating) {
     let html = `<span class="rating" role="img" aria-label="Rating: ${rating} out of 5 stars">`;
     const fullStars = Math.floor(rating);
@@ -27,7 +36,7 @@ function ratingTemplate(rating) {
     return html;
 }
 
-// Recipe HTML template
+// 3c. Recipe Card HTML Template
 function recipeTemplate(recipe, highlightWords = []) {
     let name = recipe.name;
     let description = recipe.description;
@@ -53,7 +62,9 @@ function recipeTemplate(recipe, highlightWords = []) {
     </div>`;
 }
 
-// Render recipes
+// ==============================
+// 4. Render Recipes on Page
+// ==============================
 function renderRecipes(list, highlightWords = []) {
     const container = document.getElementById('recipe-list');
     if (!list.length) {
@@ -63,7 +74,9 @@ function renderRecipes(list, highlightWords = []) {
     }
 }
 
-// Search filter
+// ==============================
+// 5. Filter Recipes (Search Functionality)
+// ==============================
 function filterRecipes(query) {
     const words = query.toLowerCase().split(/\s+/).filter(Boolean);
     return recipes
@@ -78,6 +91,9 @@ function filterRecipes(query) {
         .sort((a, b) => a.name.localeCompare(b.name));
 }
 
+// ==============================
+// 6. Handle Search Form Submission
+// ==============================
 function handleSearch(event) {
     event.preventDefault();
     const input = document.querySelector('#searchForm input[type="text"]');
@@ -89,10 +105,13 @@ function handleSearch(event) {
     }
 }
 
-// Initialize
+// ==============================
+// 7. Initialize Page
+// ==============================
 function init() {
     renderRecipes([getRandomRecipe(recipes)]);
     document.getElementById('searchForm').addEventListener('submit', handleSearch);
 }
 
+// Run Initialization
 init();
