@@ -1,10 +1,10 @@
 /*==============================
-  Google Fonts
+  1. Google Fonts
 ===============================*/
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
 
 /*==============================
-  CSS Variables
+  2. CSS Variables
 ===============================*/
 :root {
     --primary-color: #1B98E0;
@@ -16,7 +16,7 @@
 }
 
 /*==============================
-  General Styles
+  3. General Styles
 ===============================*/
 body {
     margin: 0;
@@ -39,7 +39,7 @@ img {
 }
 
 /*==============================
-  Header Section
+  4. Header Section
 ===============================*/
 header {
     background-color: var(--primary-color);
@@ -61,7 +61,7 @@ header .logo h1 {
 }
 
 /*==============================
-  Search Section
+  5. Search Section
 ===============================*/
 form#searchForm {
     width: 95%;
@@ -97,8 +97,9 @@ form#searchForm button {
     transition: background 0.25s ease;
 }
 
-form#searchForm button:hover {
-    background: #ddd;
+form#searchForm button:hover,
+form#searchForm button:focus {
+    background-color: #ddd;
 }
 
 form#searchForm button img.search-icon {
@@ -107,7 +108,7 @@ form#searchForm button img.search-icon {
 }
 
 /*==============================
-  Recipe Card Section
+  6. Recipe Card Section
 ===============================*/
 #recipe-list {
     padding: 2rem;
@@ -131,7 +132,8 @@ form#searchForm button img.search-icon {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.recipe-card:hover {
+.recipe-card:hover,
+.recipe-card:focus-within {
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
@@ -149,8 +151,11 @@ form#searchForm button img.search-icon {
     transition: transform 0.3s ease;
 }
 
-.recipe-card .image-container img:hover {
+.recipe-card .image-container img:hover,
+.recipe-card .image-container img:focus {
     transform: scale(1.05);
+    outline: 3px solid #ffbf47; /* focus indicator for keyboard */
+    outline-offset: 2px;
 }
 
 .recipe-content {
@@ -184,7 +189,7 @@ form#searchForm button img.search-icon {
     border-color: var(--text-dark);
 }
 
-h3.tag-color {
+h2 {
     color: var(--primary-color);
     font-size: 2rem;
 }
@@ -199,7 +204,7 @@ h3.tag-color {
 }
 
 /*==============================
-  Footer
+  7. Footer
 ===============================*/
 footer {
     background-color: var(--secondary-color);
@@ -217,14 +222,22 @@ footer .footer-content {
 }
 
 footer .attribution a {
-    color: white;
+    color: #ffffff; /* high-contrast white */
+    background-color: #007d7d; /* darker teal */
     text-decoration: none;
     font-size: 0.8rem;
-    opacity: 0.9;
+    opacity: 1;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    transition: opacity 0.25s ease, background-color 0.25s ease;
 }
 
-footer .attribution a:hover {
-    opacity: 1;
+footer .attribution a:hover,
+footer .attribution a:focus {
+    opacity: 0.85;
+    background-color: #005f5f; /* darker on hover/focus */
+    outline: 3px dashed #ffbf47; /* keyboard focus */
+    outline-offset: 3px;
 }
 
 footer .social {
@@ -239,12 +252,15 @@ footer .social img {
     transition: opacity 0.25s ease;
 }
 
-footer .social img:hover {
+footer .social img:hover,
+footer .social img:focus {
     opacity: 0.7;
+    outline: 3px dashed #ffbf47;
+    outline-offset: 2px;
 }
 
 /*==============================
-  Responsive
+  8. Responsive
 ===============================*/
 @media (max-width: 768px) {
     .recipe-card {
@@ -271,10 +287,12 @@ footer .social img:hover {
     }
 }
 
-
-@media (min-width: 960px) {
-    main(
-	{
-		max-width:960px
-    }
+/*==============================
+  9. Accessibility Focus & Hover Styles
+===============================*/
+a:focus,
+footer .footer-link:focus,
+button:focus {
+    outline: 3px dashed #ffbf47;
+    outline-offset: 3px;
 }
