@@ -1,20 +1,21 @@
 import recipes from './recipes.mjs';
 
-// Random number helper
+// Helper: random integer
 function random(num) {
     return Math.floor(Math.random() * num);
 }
 
+// Pick random recipe
 function getRandomRecipe(list) {
     return list[random(list.length)];
 }
 
-// Tags template
+// Generate tags HTML
 function tagsTemplate(tags) {
     return tags.map(tag => `<li>${tag}</li>`).join('');
 }
 
-// Ratings template
+// Generate rating HTML
 function ratingTemplate(rating) {
     let html = `<span class="rating" role="img" aria-label="Rating: ${rating} out of 5 stars">`;
     const fullStars = Math.floor(rating);
@@ -27,7 +28,7 @@ function ratingTemplate(rating) {
     return html;
 }
 
-// Recipe HTML template
+// Recipe card template
 function recipeTemplate(recipe, highlightWords = []) {
     let name = recipe.name;
     let description = recipe.description;
@@ -53,7 +54,7 @@ function recipeTemplate(recipe, highlightWords = []) {
     </div>`;
 }
 
-// Render recipes
+// Render recipes to DOM
 function renderRecipes(list, highlightWords = []) {
     const container = document.getElementById('recipe-list');
     if (!list.length) {
@@ -63,7 +64,7 @@ function renderRecipes(list, highlightWords = []) {
     }
 }
 
-// Search filter
+// Filter recipes by search query
 function filterRecipes(query) {
     const words = query.toLowerCase().split(/\s+/).filter(Boolean);
     return recipes
@@ -78,6 +79,7 @@ function filterRecipes(query) {
         .sort((a, b) => a.name.localeCompare(b.name));
 }
 
+// Handle search form submission
 function handleSearch(event) {
     event.preventDefault();
     const input = document.querySelector('#searchForm input[type="text"]');
@@ -89,7 +91,7 @@ function handleSearch(event) {
     }
 }
 
-// Initialize
+// Initialize page
 function init() {
     renderRecipes([getRandomRecipe(recipes)]);
     document.getElementById('searchForm').addEventListener('submit', handleSearch);

@@ -1,0 +1,232 @@
+/* ===============================
+   GENERAL RESET
+================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ===============================
+   NAVBAR
+================================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2E7D32;
+    color: white;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    background-color: #1b4d23;
+}
+
+.navbar .auth-buttons a {
+    margin-left: 10px;
+}
+
+/* ===============================
+   BUTTONS
+================================= */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn.primary {
+    background-color: #2E7D32;
+    color: white;
+}
+
+.btn.primary:hover {
+    background-color: #1b4d23;
+}
+
+.btn.outline {
+    background-color: transparent;
+    border: 2px solid #2E7D32;
+    color: #2E7D32;
+}
+
+.btn.outline:hover {
+    background-color: #2E7D32;
+    color: white;
+}
+
+/* ===============================
+   HERO SECTION
+================================= */
+.hero {
+    background: url('../images/hero.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* ===============================
+   SECTIONS
+================================= */
+.section {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #2E7D32;
+    text-align: center;
+}
+
+/* ===============================
+   GRIDS & CARDS
+================================= */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* ===============================
+   EQUIPMENT LIST
+================================= */
+#searchBar {
+    width: 90%;
+    padding: 12px;
+    margin: 20px auto 40px;
+    display: block;
+    font-size: 16px;
+    border: 2px solid #2E7D32;
+    border-radius: 6px;
+}
+
+.equipment-list {
+    max-width: 900px;
+    margin: auto;
+    font-size: 18px;
+}
+
+.equipment-list li {
+    list-style: none;
+    padding: 8px 0;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.category {
+    margin-top: 30px;
+    background: #2E7D32;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* ===============================
+   FORMS
+================================= */
+form {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+form label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: bold;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+form button {
+    width: 100%;
+}
+
+/* ===============================
+   FOOTER
+================================= */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2E7D32;
+    color: white;
+    margin-top: 50px;
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+@media (max-width: 768px) {
+    .navbar nav {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+}
