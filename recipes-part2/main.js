@@ -1,6 +1,17 @@
+<<<<<<< HEAD
 import recipes from './recipes.mjs';
 
 // Helper: random integer
+=======
+// ==============================
+// 1. Import Recipes Data
+// ==============================
+import recipes from './recipes.mjs';
+
+// ==============================
+// 2. Random Number Helper Functions
+// ==============================
+>>>>>>> 55b19cc9eee3116ab7bb1a59abd5991262fcabf7
 function random(num) {
     return Math.floor(Math.random() * num);
 }
@@ -10,12 +21,24 @@ function getRandomRecipe(list) {
     return list[random(list.length)];
 }
 
+<<<<<<< HEAD
 // Generate tags HTML
+=======
+// ==============================
+// 3. Template Functions
+// ==============================
+
+// 3a. Tags HTML Template
+>>>>>>> 55b19cc9eee3116ab7bb1a59abd5991262fcabf7
 function tagsTemplate(tags) {
     return tags.map(tag => `<li>${tag}</li>`).join('');
 }
 
+<<<<<<< HEAD
 // Generate rating HTML
+=======
+// 3b. Ratings HTML Template
+>>>>>>> 55b19cc9eee3116ab7bb1a59abd5991262fcabf7
 function ratingTemplate(rating) {
     let html = `<span class="rating" role="img" aria-label="Rating: ${rating} out of 5 stars">`;
     const fullStars = Math.floor(rating);
@@ -28,7 +51,11 @@ function ratingTemplate(rating) {
     return html;
 }
 
+<<<<<<< HEAD
 // Recipe card template
+=======
+// 3c. Recipe Card HTML Template
+>>>>>>> 55b19cc9eee3116ab7bb1a59abd5991262fcabf7
 function recipeTemplate(recipe, highlightWords = []) {
     let name = recipe.name;
     let description = recipe.description;
@@ -54,7 +81,13 @@ function recipeTemplate(recipe, highlightWords = []) {
     </div>`;
 }
 
+<<<<<<< HEAD
 // Render recipes to DOM
+=======
+// ==============================
+// 4. Render Recipes on Page
+// ==============================
+>>>>>>> 55b19cc9eee3116ab7bb1a59abd5991262fcabf7
 function renderRecipes(list, highlightWords = []) {
     const container = document.getElementById('recipe-list');
     if (!list.length) {
@@ -64,7 +97,13 @@ function renderRecipes(list, highlightWords = []) {
     }
 }
 
+<<<<<<< HEAD
 // Filter recipes by search query
+=======
+// ==============================
+// 5. Filter Recipes (Search Functionality)
+// ==============================
+>>>>>>> 55b19cc9eee3116ab7bb1a59abd5991262fcabf7
 function filterRecipes(query) {
     const words = query.toLowerCase().split(/\s+/).filter(Boolean);
     return recipes
@@ -79,7 +118,13 @@ function filterRecipes(query) {
         .sort((a, b) => a.name.localeCompare(b.name));
 }
 
+<<<<<<< HEAD
 // Handle search form submission
+=======
+// ==============================
+// 6. Handle Search Form Submission
+// ==============================
+>>>>>>> 55b19cc9eee3116ab7bb1a59abd5991262fcabf7
 function handleSearch(event) {
     event.preventDefault();
     const input = document.querySelector('#searchForm input[type="text"]');
@@ -91,10 +136,20 @@ function handleSearch(event) {
     }
 }
 
+<<<<<<< HEAD
 // Initialize page
+=======
+// ==============================
+// 7. Initialize Page
+// ==============================
+>>>>>>> 55b19cc9eee3116ab7bb1a59abd5991262fcabf7
 function init() {
     renderRecipes([getRandomRecipe(recipes)]);
     document.getElementById('searchForm').addEventListener('submit', handleSearch);
 }
 
+<<<<<<< HEAD
+=======
+// Run Initialization
+>>>>>>> 55b19cc9eee3116ab7bb1a59abd5991262fcabf7
 init();
