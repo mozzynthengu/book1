@@ -1,57 +1,182 @@
-/* site-plan.css - AFRIBICON TECHNOLOGY */
+/* ============================================================
+   AFRIBICON TECHNOLOGY - SITE PLAN CSS
+   Structured & Labeled Version
+   ============================================================ */
 
+/* ==================== GOOGLE FONTS ==================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;400;500&display=swap');
+
+/* ==================== COLOR VARIABLES ==================== */
+:root {
+    --primary: #1B5E20;
+    --secondary: #263238;
+    --accent1: #FFB300;
+    --accent2: #4CAF50;
+    --light-bg: #F4F4F4;
+    --dark-text: #222;
+    --light-text: #fff;
+}
+
+/* ==================== GLOBAL RESET ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==================== BODY STYLING ==================== */
 body {
-  font-family: "Open Sans", sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    padding: 20px;
+    line-height: 1.6;
 }
 
-header, footer {
-  background-color: #0077b6;
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
+/* ==================== HEADER STYLING ==================== */
+header {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-header h1 {
-  font-family: "Poppins", sans-serif;
-  margin-bottom: 0.2em;
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary);
+    margin-bottom: 10px;
 }
 
-main {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-section {
-  margin-bottom: 2rem;
+h1 {
+    font-size: 2rem;
 }
 
 h2 {
-  color: #0077b6;
-  font-family: "Poppins", sans-serif;
-  border-bottom: 2px solid #00b4d8;
-  padding-bottom: 0.3rem;
+    margin-top: 20px;
+    border-bottom: 3px solid var(--accent2);
+    padding-bottom: 4px;
 }
 
-ul {
-  list-style-type: square;
-  padding-left: 20px;
+/* ==================== SUBSECTIONS ==================== */
+.subsection {
+    background: white;
+    padding: 18px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
 }
 
-img {
-  margin-top: 0.5rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+/* ==================== LOGO ==================== */
+.logo {
+    width: 180px;
+    margin-top: 10px;
+    border: 3px solid var(--accent1);
+    border-radius: 10px;
 }
 
+/* ==================== COLOR PALETTE TABLE ==================== */
+table.colors {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    text-align: center;
+}
+
+table.colors th,
+table.colors td {
+    padding: 12px;
+    font-weight: bold;
+    color: var(--light-text);
+}
+
+.primary   { background: var(--primary); }
+.secondary { background: var(--secondary); }
+.accent1   { background: var(--accent1); }
+.accent2   { background: var(--accent2); }
+
+/* ==================== COLORED PARAGRAPH ==================== */
+.colored {
+    padding: 12px;
+    background: var(--accent1);
+    color: var(--secondary);
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+/* ==================== NAVIGATION DEMO ==================== */
+.nav-demo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.nav-demo a {
+    background: var(--primary);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-demo a:hover {
+    background: var(--accent2);
+}
+
+/* ============================================================
+   WIREFRAME SECTIONS
+   ============================================================ */
+
+/* ---------- WIREFRAME BOX ---------- */
+.wireframe-box {
+    border: 2px solid var(--secondary);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 25px 0;
+    background: white;
+}
+
+/* ---------- WIREFRAME SECTIONS & TITLES ---------- */
+.section {
+    margin: 20px 0;
+}
+
+.section-title {
+    font-weight: 600;
+    color: var(--accent2);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* ---------- PLACEHOLDER BOXES ---------- */
+.placeholder {
+    border: 2px dashed var(--accent1);
+    padding: 20px;
+    text-align: center;
+    color: var(--secondary);
+    font-style: italic;
+    background: #fff8e1;
+    border-radius: 8px;
+    min-height: 60px;
+}
+
+/* ---------- GRID LAYOUTS FOR WIREFRAMES ---------- */
+.three-col, .two-col {
+    display: grid;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.three-col {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.two-col {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* ==================== FOOTER ==================== */
 footer {
-  font-size: 0.9rem;
+    margin-top: 40px;
+    padding: 20px;
 }

@@ -1,93 +1,287 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AFRIBICON TECHNOLOGY | Site Plan</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFRIBICON TECHNOLOGY - Site Plan</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <header>
-    <h1>AFRIBICON TECHNOLOGY</h1>
-    <h2>Personal Web Application Site Plan</h2>
-    <p>Author: [Your Name]</p>
-  </header>
+    <!-- ==================== HEADER ==================== -->
+    <header>
+        <h1>AFRIBICON TECHNOLOGY –Site Plan</h1>
+        <h2>Name: Daniel Nthengu</h2>
+        <h2>WDD 131 - [Section A1]</h2>
+    </header>
 
-  <main>
-    <!-- PURPOSE & AUDIENCE -->
-    <section>
-      <h2>Purpose</h2>
-      <p>The purpose of the AFRIBICON TECHNOLOGY web application is to provide IT solutions, technical support, and digital services for individuals and businesses. It will showcase our services, allow clients to request quotes, and demonstrate our expertise in technology and innovation.</p>
-      
-      <h2>Target Audience</h2>
-      <p>Our primary audience includes small to medium-sized businesses, entrepreneurs, and individuals seeking reliable IT services such as web development, networking, cybersecurity, and digital consulting.</p>
-    </section>
+    <main>
 
-    <!-- DYNAMIC ELEMENTS -->
-    <section>
-      <h2>Dynamic Elements</h2>
-      <p>JavaScript will be used to add interactivity and enhance the user experience. Planned dynamic features include:</p>
-      <ul>
-        <li>A contact form with form validation and confirmation messages.</li>
-        <li>A service filter using an array of service objects that users can sort or search through.</li>
-        <li>A dynamic testimonial slider that rotates customer feedback.</li>
-        <li>Conditional logic to display special offers based on user input or time of day.</li>
-      </ul>
-    </section>
+        <!-- ==================== OVERVIEW SECTION ==================== -->
+        <section id="overview">
+            <h2>Overview</h2>
 
-    <!-- LOGO -->
-    <section>
-      <h2>Logo</h2>
-      <p>The logo will represent innovation and African-based technology excellence. Below is a placeholder image:</p>
-      <img src="images/afribontech-logo.png" alt="AFRIBICON TECHNOLOGY Logo" width="200">
-    </section>
+            <!-- Purpose Subsection -->
+            <div class="subsection" id="overview-purpose">
+                <h3>Purpose</h3>
+                <p>
+                    AFRIBICON TECHNOLOGY provides professional digital solutions including
+                    website design, hosting, custom systems, branding, IT consulting, and
+                    cybersecurity. The purpose of the site is to present our services,
+                    display our portfolio, share pricing packages, and allow customers to
+                    contact us for quotes and support.
+                </p>
+            </div>
 
-    <!-- COLORS & FONTS -->
-    <section>
-      <h2>Colors and Fonts</h2>
-      <ul>
-        <li><strong>Primary Color:</strong> #0077b6 (Deep Tech Blue)</li>
-        <li><strong>Secondary Color:</strong> #00b4d8 (Aqua)</li>
-        <li><strong>Accent Color:</strong> #f9a826 (Vibrant Orange)</li>
-        <li><strong>Font 1 (Headings):</strong> "Poppins", sans-serif</li>
-        <li><strong>Font 2 (Body):</strong> "Open Sans", sans-serif</li>
-      </ul>
-      <p>These colors and fonts create a modern, tech-oriented feel with clarity and professionalism.</p>
-    </section>
+            <!-- Audience Subsection -->
+            <div class="subsection" id="overview-audience">
+                <h3>Audience</h3>
+                <p>
+                    Our audience includes small and medium businesses, schools, clinics, NGOs,
+                    entrepreneurs, and individuals seeking modern, affordable digital
+                    solutions. The site is designed for users who want professional
+                    technology services such as web development, branding, and IT consulting.
+                </p>
+            </div>
 
-    <!-- CONTENT -->
-    <section>
-      <h2>Content Outline</h2>
-      <h3>Home Page</h3>
-      <ul>
-        <li>Company introduction and mission statement.</li>
-        <li>Overview of IT services offered.</li>
-        <li>Quick contact link and client testimonials.</li>
-      </ul>
+            <!-- Dynamic Elements Subsection -->
+            <div class="subsection" id="overview-dynamic-elements">
+                <h3>Dynamic Elements</h3>
+                <p>JavaScript will be used for interactive and dynamic features including:</p>
+                <ul>
+                    <li>Service filtering using arrays and <code>filter()</code>.</li>
+                    <li>Dark/light mode toggle (DOM manipulation + conditionals).</li>
+                    <li>Expandable service descriptions using event listeners.</li>
+                    <li>“Saved services” using objects and <code>localStorage</code>.</li>
+                    <li>Modules: <strong>services.js</strong> (data), <strong>ui.js</strong> (display), <strong>main.js</strong> (logic).</li>
+                </ul>
+            </div>
+        </section>
 
-      <h3>Services Page (Child Page)</h3>
-      <ul>
-        <li>Detailed list of IT services (web design, networking, tech support, etc.).</li>
-        <li>Interactive JavaScript feature to filter or sort services.</li>
-        <li>“Request a Quote” section with dynamic form submission.</li>
-      </ul>
-    </section>
+        <hr>
 
-    <!-- WIREFRAMES -->
-    <section>
-      <h2>Wireframes</h2>
-      <p>Wireframes illustrate the structure of each page.</p>
+        <!-- ==================== BRANDING SECTION ==================== -->
+        <section id="branding">
+            <h2>Branding</h2>
 
-      <h3>Home Page Wireframe</h3>
-      <img src="images/home-wireframe.png" alt="Home Page Wireframe" width="400">
+            <!-- Logo Subsection -->
+            <div class="subsection" id="branding-logo">
+                <h3>Website Logo</h3>
+                <p>Logo for AFRIBICON TECHNOLOGY:</p>
+                <img src="image/Logo.png" alt="AFRIBICON TECHNOLOGY Logo" class="logo">
+            </div>
+        </section>
 
-      <h3>Services Page Wireframe</h3>
-      <img src="images/services-wireframe.png" alt="Services Page Wireframe" width="400">
-    </section>
-  </main>
+        <hr>
 
-  <footer>
-    <p>&copy; 2025 AFRIBICON TECHNOLOGY | Site Plan</p>
-  </footer>
+        <!-- ==================== STYLE GUIDE SECTION ==================== -->
+        <section id="style-guide">
+            <h2>Style Guide</h2>
+
+            <!-- Color Palette Subsection -->
+            <div class="subsection" id="style-color-palette">
+                <h3>Color Palette</h3>
+                <p>
+                    Palette URL:
+                    <a href="https://coolors.co/1b5e20-263238-ffb300-4caf50-f4f4f4" target="_blank">
+                        https://coolors.co/
+                    </a>
+                </p>
+                <table class="colors">
+                    <tr>
+                        <th>Primary</th>
+                        <th>Secondary</th>
+                        <th>Accent 1</th>
+                        <th>Accent 2</th>
+                    </tr>
+                    <tr>
+                        <td class="primary">#1B5E20</td>
+                        <td class="secondary">#263238</td>
+                        <td class="accent1">#FFB300</td>
+                        <td class="accent2">#4CAF50</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Typography Subsection -->
+            <div class="subsection" id="style-typography">
+                <h3>Typography</h3>
+                <p><strong>Heading Font:</strong> Poppins</p>
+                <p><strong>Paragraph Font:</strong> Roboto</p>
+            </div>
+
+            <!-- Paragraph Examples -->
+            <div class="subsection" id="style-paragraph-normal">
+                <h3>Normal Paragraph Example</h3>
+                <p>
+                    AFRIBICON TECHNOLOGY is committed to providing high-quality, modern digital
+                    solutions to help organizations grow and operate efficiently.
+                </p>
+            </div>
+
+            <div class="subsection" id="style-paragraph-colored">
+                <h3>Colored Paragraph Example</h3>
+                <p class="colored">
+                    We believe in innovation, accessibility, and reliability — making
+                    technology simple and effective for everyone.
+                </p>
+            </div>
+
+            <!-- Navigation Example -->
+            <div class="subsection" id="style-navigation">
+                <h3>Navigation</h3>
+                <nav class="nav-demo">
+                    <a href="#">Home</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Services</a>
+                    <a href="#">Portfolio</a>
+                    <a href="#">Price</a>
+                    <a href="#">Contact</a>
+                </nav>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- ==================== CONTENT SECTION ==================== -->
+        <section id="content">
+            <h2>Content</h2>
+
+            <!-- Home Page -->
+            <div class="subsection" id="content-home">
+                <h3>Home Page</h3>
+                <p>
+                    <strong>Hero Title:</strong> Empowering Africa Through Smart Digital Solutions.<br>
+                    AFRIBICON TECHNOLOGY provides modern, affordable, and professional digital
+                    services including web development, hosting, custom systems, branding,
+                    and IT consulting. The home page will include service highlights,
+                    featured portfolio items, and a call-to-action to contact us.
+                </p>
+            </div>
+
+            <!-- About Us -->
+            <div class="subsection" id="content-about">
+                <h3>About Us</h3>
+                <p>
+                    AFRIBICON TECHNOLOGY is a digital solutions company helping organizations
+                    embrace technology. Includes mission, vision, values, company background,
+                    and reasons to choose us.
+                </p>
+            </div>
+
+            <!-- Services Page -->
+            <div class="subsection" id="content-services">
+                <h3>Services Page</h3>
+                <p>
+                    Full list of services including:
+                    Website Design, Hosting, E-Commerce, Web Systems,
+                    School/Clinic Systems, Branding, IT Consulting,
+                    Maintenance, Cybersecurity.
+                </p>
+            </div>
+
+            <!-- Portfolio Page -->
+            <div class="subsection" id="content-portfolio">
+                <h3>Portfolio Page</h3>
+                <p>Displays sample projects with descriptions, screenshots, and links.</p>
+            </div>
+
+            <!-- Price Page -->
+            <div class="subsection" id="content-price">
+                <h3>Price Page</h3>
+                <p>Pricing packages for websites, branding, e-commerce, hosting, and more.</p>
+            </div>
+
+            <!-- Contact Page -->
+            <div class="subsection" id="content-contact">
+                <h3>Contact Page</h3>
+                <p>
+                    Contact form (name, email, service selection, message) + business contact info.
+                </p>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- ==================== WIREFRAMES SECTION ==================== -->
+        <section id="wireframes">
+            <h2>Wireframes</h2>
+
+            <!-- Home Page Wireframe -->
+            <div class="wireframe-box" id="wireframe-home">
+                <h3>Home Page Wireframe</h3>
+
+                <div class="section">
+                    <div class="section-title">Hero Images</div>
+                    <div class="placeholder">Three slideshow images</div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">About AFRIBICON TECHNOLOGY</div>
+                    <div class="placeholder">Brief description</div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Service Highlights</div>
+                    <div class="three-col">
+                        <div class="placeholder">Website Design</div>
+                        <div class="placeholder">E-Commerce</div>
+                        <div class="placeholder">Branding / IT Consulting</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Portfolio Preview</div>
+                    <div class="two-col">
+                        <div class="placeholder">Project 1</div>
+                        <div class="placeholder">Project 2</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="placeholder">Call-To-Action: Request a Quote</div>
+                </div>
+            </div>
+
+            <!-- Services Page Wireframe -->
+            <div class="wireframe-box" id="wireframe-services">
+                <h3>Services Page Wireframe</h3>
+
+                <div class="section">
+                    <div class="section-title">Services Overview</div>
+                    <div class="three-col">
+                        <div class="placeholder">Website Design</div>
+                        <div class="placeholder">Hosting</div>
+                        <div class="placeholder">E-Commerce</div>
+                    </div>
+                    <div class="three-col">
+                        <div class="placeholder">Custom Apps</div>
+                        <div class="placeholder">School/Clinic Systems</div>
+                        <div class="placeholder">Branding</div>
+                    </div>
+                    <div class="three-col">
+                        <div class="placeholder">IT Consulting</div>
+                        <div class="placeholder">Maintenance</div>
+                        <div class="placeholder">Cybersecurity</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="placeholder">Request Quote Button</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="wireframe-box" id="footer-structure">
+            <h3>Footer Structure</h3>
+            <div class="section">
+                <div class="placeholder">Footer: About Afribicon | Quick Links | Contact Info</div>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
