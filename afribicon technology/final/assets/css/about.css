@@ -1,0 +1,198 @@
+/* ========================
+   ABOUT PAGE STYLES
+======================== */
+
+/* ABOUT HERO */
+.about-hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: var(--accent2);
+    color: white;
+    font-family: var(--font-heading);
+}
+
+.about-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.about-hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* COMPANY OVERVIEW */
+.company-overview {
+    max-width: 900px;
+    margin: 60px auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.company-overview h2 {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.company-overview p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* MISSION & VISION */
+.mission-vision {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin: 60px 20px;
+}
+
+.mv-card {
+    background: #f7f7f7;
+    padding: 30px 20px;
+    border-radius: 12px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mv-card h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.mv-card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.mv-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+/* VALUES */
+.values {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.values h2 {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.values-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.value-card {
+    background: #f7f7f7;
+    padding: 25px;
+    border-radius: 12px;
+    width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.value-card p {
+    color: #555;
+    line-height: 1.5;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+/* WHY CHOOSE US */
+.why-choose-us {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.why-choose-us h2 {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.why-choose-us ul {
+    list-style: disc inside;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    padding-left: 0;
+}
+
+.why-choose-us ul li {
+    margin-bottom: 12px;
+}
+
+/* ========================
+   RESPONSIVE STYLES
+======================== */
+
+/* Tablets */
+@media screen and (max-width: 992px) {
+    .mission-vision {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .mv-card {
+        width: 80%;
+    }
+
+    .values-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .value-card {
+        width: 80%;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+    .about-hero h1 {
+        font-size: 2rem;
+    }
+
+    .about-hero p {
+        font-size: 1rem;
+    }
+
+    .company-overview h2,
+    .values h2,
+    .why-choose-us h2 {
+        font-size: 1.5rem;
+    }
+
+    .mv-card,
+    .value-card {
+        padding: 20px;
+    }
+
+    .why-choose-us ul li {
+        font-size: 1rem;
+    }
+}

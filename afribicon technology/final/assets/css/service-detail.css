@@ -1,0 +1,46 @@
+/* =========================
+   Service Detail Section
+============================ */
+.service-detail {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.service-detail img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.service-detail h1 {
+    color: #1B5E20;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.service-detail p {
+    color: #333;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.back-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #1B5E20;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.back-btn:hover {
+    background-color: #4CAF50;
+}

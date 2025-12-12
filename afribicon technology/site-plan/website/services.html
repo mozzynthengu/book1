@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AFRIBICON TECHNOLOGY | Our Services</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="logo-title-group">
+      <img src="assets/images/logo8.png" alt="Afribicon Logo" class="logo" />
+      <h1 class="site-title">AFRIBICON <span>TECHNOLOGY</span></h1>
+    </div>
+
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="price.html">Price</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-slider" style="height:50vh;">
+    <div class="slide active" style="background-image:url('assets/images/hero_services.jpg');">
+      <div class="hero-content">
+        <h1>Our Services</h1>
+        <p>We deliver tailored digital solutions to help businesses grow, from websites to cybersecurity.</p>
+      </div>
+    </div>
+  </section>
+<!-- SERVICES SECTION USING FLEXBOX -->
+<section class="services-highlights container" style="padding:60px 10%;">
+  <h2>Our Services Overview</h2>
+  <p style="margin-bottom:40px;">We provide a full range of digital solutions to help your business, school, or organization thrive.</p>
+
+  <!-- Filter Buttons -->
+  <div class="service-filters" style="margin-bottom:30px;">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="web">Web & Apps</button>
+    <button class="filter-btn" data-filter="branding">Branding & Marketing</button>
+    <button class="filter-btn" data-filter="support">Support & Security</button>
+  </div>
+
+  <!-- Services Cards Container -->
+  <div class="service-cards" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+
+    <!-- Website Design -->
+    <div class="service-card" data-category="web" style="flex:1 1 300px; max-width:350px;">
+      <h3>Website Design</h3>
+      <p>Modern, responsive, SEO-friendly websites for businesses, schools, NGOs, and startups.</p>
+    </div>
+
+    <!-- Hosting -->
+    <div class="service-card" data-category="web" style="flex:1 1 300px; max-width:350px;">
+      <h3>Web Hosting</h3>
+      <p>Reliable, secure hosting with domain registration and server management for all business sizes.</p>
+    </div>
+
+    <!-- E-Commerce -->
+    <div class="service-card" data-category="web" style="flex:1 1 300px; max-width:350px;">
+      <h3>E-Commerce</h3>
+      <p>Online stores with mobile money, product management, and delivery tracking integration.</p>
+    </div>
+
+    <!-- Custom Apps -->
+    <div class="service-card" data-category="web" style="flex:1 1 300px; max-width:350px;">
+      <h3>Custom Web Applications</h3>
+      <p>Tailored software solutions to optimize business processes and internal operations.</p>
+    </div>
+
+    <!-- School/Clinic Systems -->
+    <div class="service-card" data-category="web" style="flex:1 1 300px; max-width:350px;">
+      <h3>School/Clinic Systems</h3>
+      <p>Manage students, patients, staff, payments, and reporting efficiently with custom systems.</p>
+    </div>
+
+    <!-- Branding -->
+    <div class="service-card" data-category="branding" style="flex:1 1 300px; max-width:350px;">
+      <h3>Branding</h3>
+      <p>Logo design, brand identity, social media pages, and Google Business setup.</p>
+    </div>
+
+    <!-- IT Consulting -->
+    <div class="service-card" data-category="support" style="flex:1 1 300px; max-width:350px;">
+      <h3>IT Consulting</h3>
+      <p>Technical guidance, digital transformation consulting, and cloud adoption advice.</p>
+    </div>
+
+    <!-- Maintenance -->
+    <div class="service-card" data-category="support" style="flex:1 1 300px; max-width:350px;">
+      <h3>System Maintenance</h3>
+      <p>Ongoing system updates, troubleshooting, backups, and IT support to keep your systems running smoothly.</p>
+    </div>
+
+    <!-- Cybersecurity -->
+    <div class="service-card" data-category="support" style="flex:1 1 300px; max-width:350px;">
+      <h3>Cybersecurity</h3>
+      <p>Security audits, firewall setup, ransomware prevention, and data privacy services.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- SCRIPT FOR FILTERING -->
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const serviceCards = document.querySelectorAll('.service-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+
+      serviceCards.forEach(card => {
+        if(filter === 'all' || card.dataset.category === filter){
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+  <!-- SERVICES GRID -->
+  <section class="services-highlights container" style="padding:60px 10%;">
+    <h2>What We Offer</h2>
+    <p style="margin-bottom:40px;">Comprehensive IT solutions designed to scale with your business.</p>
+
+    <div class="service-cards">
+
+      <div class="service-card">
+        <h3>Website Design & Development</h3>
+        <p>Responsive, modern, and SEO-friendly websites for businesses, NGOs, and schools.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>E-Commerce Stores</h3>
+        <p>Sell online with secure platforms, mobile payment integration, and inventory management.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Web Hosting & Domains</h3>
+        <p>Reliable hosting with 99.9% uptime and easy domain registration.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Custom Web Applications</h3>
+        <p>Tailor-made software solutions for businesses, schools, and clinics.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Digital Branding & Social Media</h3>
+        <p>Logo design, brand identity, social media pages, and Google Business setup.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>IT Consulting & Training</h3>
+        <p>Technical guidance, digital transformation strategies, and staff training.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Cybersecurity & Data Protection</h3>
+        <p>Security audits, firewalls, ransomware protection, and data privacy services.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>System Maintenance & Support</h3>
+        <p>Updates, troubleshooting, backups, and ongoing IT support for your systems.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section">
+    <h2>Ready to Enhance Your Digital Presence?</h2>
+    <p>Contact us today to discuss your project and get a custom solution.</p>
+    <a href="contact.html" class="cta large">Request a Quote</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="pro-footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>AFRIBICON TECHNOLOGY</h3>
+        <hr />
+        <p>Professional digital solutions for Africa — website design, hosting, systems & branding.</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="price.html">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>Email: support@afribicontech.com</p>
+        <p>Phone: +254 700 123 456</p>
+        <p>Nairobi, Kenya</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 AFRIBICON TECHNOLOGY. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

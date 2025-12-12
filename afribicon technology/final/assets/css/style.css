@@ -1,0 +1,379 @@
+/* =============================================
+   AFRIBICON TECHNOLOGY - OPTIMIZED MAIN CSS
+   Cleaned, Non-Duplicated, Fully Responsive
+============================================= */
+
+/* ========== VARIABLES ========== */
+:root {
+    --primary: #1B5E20;
+    --secondary: #263238;
+    --accent1: #FFB300;
+    --accent2: #4CAF50;
+
+    --text-dark: #222;
+    --text-light: #f4f4f4;
+
+    --font-heading: "Poppins", sans-serif;
+    --font-body: "Roboto", sans-serif;
+}
+
+/* ========== RESET ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    background: #fff;
+    color: var(--text-dark);
+}
+
+/* =============================================
+   HEADER & NAVIGATION
+============================================= */
+header {
+    background: var(--secondary);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+}
+
+/* HEADER LOGO */
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* slightly more space between image and text */
+}
+
+/* Logo image */
+header .logo img {
+    width: 80px;          /* good default size for desktop */
+    height: auto;         /* maintain aspect ratio */
+    border-radius: 8px;   /* subtle rounded corners */
+    object-fit: contain;  /* ensure image fits nicely */
+}
+
+/* Logo text */
+header .logo .logo-text h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    color:#ff0000;
+}
+
+header .logo .logo-text span {
+    font-size: 1.8rem;
+    color: #ff9a00;
+    display: block;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    header .logo img {
+        width: 50px;  /* slightly smaller on tablets/mobile */
+    }
+
+    header .logo .logo-text h1 {
+        font-size: 1.2rem;
+    }
+
+    header .logo .logo-text span {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo {
+        gap: 6px;
+    }
+
+    header .logo img {
+        width: 40px;
+    }
+
+    header .logo .logo-text h1 {
+        font-size: 1rem;
+    }
+
+    header .logo .logo-text span {
+        font-size: 0.6rem;
+    }
+}
+
+
+/* NAVIGATION LINKS */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav ul.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul.nav-links li a {
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav ul.nav-links li a:hover,
+nav ul.nav-links li a.active {
+    color: var(--accent1);
+}
+
+/* SEARCH BAR */
+.nav-search {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-search input {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: none;
+    width: 180px;
+    transition: width .3s;
+}
+
+.nav-search input:focus {
+    width: 220px;
+}
+
+.nav-search button {
+    padding: 6px 10px;
+    background: var(--accent1);
+    border-radius: 6px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.nav-search button:hover {
+    background: var(--accent2);
+}
+
+/* HAMBURGER MENU */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.hamburger span {
+    width: 26px;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+}
+
+/* =============================================
+   GLOBAL CONTAINER
+============================================= */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* =============================================
+   FOOTER
+============================================= */
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+    background: var(--secondary);
+    color: var(--text-light);
+    padding: 60px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+footer .footer-section {
+    flex: 1 1 200px;
+    min-width: 180px;
+}
+
+footer h3 {
+    font-family: var(--font-heading);
+    margin-bottom: 15px;
+    color: var(--accent1);
+}
+
+footer p,
+footer a {
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+footer a {
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: var(--accent2);
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons img {
+    width: 28px;
+    height: 28px;
+    transition: 0.3s;
+}
+
+.social-icons img:hover {
+    filter: brightness(0) saturate(100%) invert(62%) sepia(72%) saturate(4011%) hue-rotate(88deg) brightness(100%) contrast(98%);
+}
+.footer-bottom {
+    background: #111; /* dark color for contrast */
+    color: #ccc;
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* RESPONSIVE FOOTER */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    footer .footer-section {
+        flex: 1 1 100%;
+    }
+}
+
+
+/* =============================================
+   RESPONSIVE DESIGN
+============================================= */
+
+/* TABLET - MEDIUM */
+@media (max-width: 1024px) {
+    .nav-search input {
+        width: 150px;
+    }
+}
+
+/* MOBILE NAVIGATION */
+@media (max-width: 768px) {
+
+    nav ul.nav-links {
+        position: absolute;
+        top: 75px;
+        right: 0;
+        flex-direction: column;
+        background: var(--secondary);
+        width: 220px;
+        padding: 20px;
+        border-radius: 10px;
+        display: none;
+        gap: 15px;
+    }
+
+    nav ul.nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-search {
+        display: none; /* can be toggled later */
+    }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+    header {
+        padding: 12px 20px;
+    }
+
+    header .logo-text h1 {
+        font-size: 1.3rem;
+    }
+
+    nav ul.nav-links {
+        width: 180px;
+    }
+
+    footer {
+        padding: 35px 20px;
+    }
+}
+/* HAMBURGER MENU - MOBILE */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #1B5E20;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Hide nav links on small screens */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        flex-direction: column;
+        align-items: center;
+        display: none; /* hidden by default */
+        z-index: 999;
+        padding: 10px 0;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.show {
+        display: flex; /* show menu when active */
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}

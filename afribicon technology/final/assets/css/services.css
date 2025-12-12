@@ -1,0 +1,193 @@
+/* ============================================================
+   SERVICES HERO SECTION
+   ============================================================ */
+.services-hero {
+    text-align: center;
+    margin: 40px 20px;
+}
+
+.services-hero h1 {
+    font-size: 2.5rem;
+    color: #1B5E20;
+    margin-bottom: 10px;
+}
+
+.services-hero p {
+    font-size: 1.1rem;
+    color: #333;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ============================================================
+   SERVICE FILTER DROPDOWN
+   ============================================================ */
+.service-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 30px 0 50px;
+    flex-wrap: wrap;
+}
+
+.service-filter label {
+    font-weight: 600;
+    color: #1B5E20;
+}
+
+#serviceCategory {
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 2px solid #1B5E20;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #E8F5E9;
+}
+
+#serviceCategory:hover {
+    border-color: #4CAF50;
+}
+
+/* ============================================================
+   SERVICES GRID LAYOUT
+   ============================================================ */
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* ============================================================
+   INDIVIDUAL SERVICE CARD
+   ============================================================ */
+.service-card {
+    flex: 1 1 250px;
+    max-width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    background-color: #f1fdf1;
+}
+
+.service-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #1B5E20;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* ============================================================
+   READ MORE BUTTON
+   ============================================================ */
+.read-more-btn {
+    margin: 5px 0;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    background-color: #1B5E20;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+    background-color: #4CAF50;
+}
+
+/* ============================================================
+   CARD FILTER ANIMATION
+   ============================================================ */
+.service-card {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.4s ease-in-out;
+}
+
+.service-card.hide {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+/* ============================================================
+   MODAL POPUP STYLES
+   ============================================================ */
+.service-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+}
+
+.modal-content img {
+    max-width: 100%;
+    margin: 10px 0;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #1B5E20;
+}
+
+/* ============================================================
+   RESPONSIVE BREAKPOINTS
+   ============================================================ */
+@media (max-width: 768px) {
+    .service-card {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-card {
+        flex: 1 1 90%;
+    }
+}
