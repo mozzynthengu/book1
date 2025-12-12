@@ -5,202 +5,216 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AFRIBICON TECHNOLOGY | Smart Digital Solutions</title>
 
-    <!-- Google Fonts -->
+    <!-- SEO -->
+    <meta name="description" content="AFRIBICON TECHNOLOGY delivers digital solutions including web design, IT consulting, e-commerce, branding, and software development.">
+    <meta name="keywords" content="Afribicon, Technology, Web Design, IT Consulting, E-Commerce, Branding, Software Solutions, Africa">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
-    <!-- Main CSS -->
+    <!-- Styles -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/home.css">
+
+    <!-- Preload Hero Images -->
+    <link rel="preload" as="image" href="assets/images/img/hero1.jpeg">
+    <link rel="preload" as="image" href="assets/images/img/hero2.jpeg">
+    <link rel="preload" as="image" href="assets/images/img/hero3.jpeg">
+
+   
 </head>
 <body>
-
     <!-- HEADER / NAVIGATION -->
-    <header>
-    <div class="logo">
-        <img src="assets/images/img/logob.png" alt="Afribicon Technology Logo">
-        <div class="logo-text">
-            <h1>AFRIBICON</h1>
-            <span>TECHNOLOGY</span>
+    <header role="banner">
+        <div class="logo">
+            <img src="assets/images/img/logob.png" alt="Afribicon Technology Logo" width="80" height="auto">
+            <div class="logo-text">
+                <h1>AFRIBICON</h1>
+                <span>TECHNOLOGY</span>
+            </div>
         </div>
+
+        <nav role="navigation" aria-label="Main Navigation">
+            <ul class="nav-links">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="pricing.html">Price</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <form class="nav-search" action="services.html" method="get">
+                <input type="text" name="q" placeholder="Search services..." aria-label="Search Services">
+                <button type="submit">🔍</button>
+            </form>
+
+            <div class="hamburger" aria-label="Toggle Menu" role="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main">
+        <!-- HERO SECTION -->
+        <section id="hero" aria-label="Hero Section">
+            <div class="hero-slide active" style="background-image: url('assets/images/img/hero1.jpeg');">
+                <div class="hero-content">
+                    <h2>Empowering Africa Through <span>Digital Innovation</span></h2>
+                    <p>We provide modern, affordable, and professional digital services including website development, hosting, branding, and IT consulting.</p>
+                    <a href="contact.html" class="btn-get-started">Request a Quote</a>
+                </div>
+            </div>
+
+            <div class="hero-slide" style="background-image: url('assets/images/img/hero2.jpeg');">
+                <div class="hero-content">
+                    <h2>Website Design & Smart Systems</h2>
+                    <p>Get modern websites and professional systems for schools, clinics, and organizations designed to boost productivity and growth.</p>
+                    <a href="services.html" class="btn-get-started">Explore Services</a>
+                </div>
+            </div>
+
+            <div class="hero-slide" style="background-image: url('assets/images/img/hero3.jpeg');">
+                <div class="hero-content">
+                    <h2>Secure, Reliable, and Professional</h2>
+                    <p>Our cybersecurity, maintenance, and IT consulting ensure your business runs smoothly and securely.</p>
+                    <a href="portfolio.html" class="btn-get-started">View Portfolio</a>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <span id="prevHero" class="hero-control prev" aria-label="Previous Slide">&#10094;</span>
+            <span id="nextHero" class="hero-control next" aria-label="Next Slide">&#10095;</span>
+
+            <!-- Dots -->
+            <div id="heroIndicators" aria-label="Hero Slider Pagination"></div>
+        </section>
+
+        <!-- ABOUT PREVIEW -->
+        <section class="about-preview" aria-label="About AFRIBICON TECHNOLOGY">
+            <div class="container">
+                <h2>About AFRIBICON TECHNOLOGY</h2>
+                <p>
+                    We are a digital solutions company helping businesses, schools, clinics, NGOs, and entrepreneurs 
+                    embrace modern technology. We deliver high-quality, impactful digital services tailored to your needs.
+                </p>
+                <a href="about.html" class="learn-more-btn">Learn More</a>
+            </div>
+        </section>
+
+        <!-- SERVICE HIGHLIGHTS -->
+        <section class="home-services" aria-label="Our Services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="service-flex">
+                    <div class="service-card">
+                        <img src="assets/images/img/web1.png" alt="Web Design" loading="lazy">
+                        <h3>Website Design</h3>
+                        <p>Modern, mobile-friendly, and professional websites tailored for your business.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <img src="assets/images/img/web1.png" alt="E-Commerce" loading="lazy">
+                        <h3>E-Commerce Solutions</h3>
+                        <p>Sell your products online with secure and fast e-commerce platforms.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <img src="assets/images/img/dez.png" alt="Branding & Graphic Design" loading="lazy">
+                        <h3>Branding & Graphic Design</h3>
+                        <p>Professional logos, branding kits, posters, and marketing materials.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <img src="assets/images/img/it.png" alt="IT Consulting" loading="lazy">
+                        <h3>IT Consulting</h3>
+                        <p>Expert guidance for technology adoption, systems, and digital transformation.</p>
+                    </div>
+                </div>
+                <a href="services.html" class="view-more-btn">View All Services</a>
+            </div>
+        </section>
+
+        <!-- PORTFOLIO PREVIEW -->
+<section class="portfolio-preview">
+    <div class="container">
+        <h2>Recent Projects</h2>
+        <div class="service-flex"> <!-- Reusing service-flex styling -->
+            
+            <a href="portfolio.html#school-management" class="service-card portfolio-card">
+                <img src="assets/images/img/school.png" alt="School Management System" loading="lazy">
+                <h3>School Management System</h3>
+            </a>
+
+            <a href="portfolio.html#clinic-patient" class="service-card portfolio-card">
+                <img src="assets/images/img/web1.png" alt="Clinic Patient System" loading="lazy">
+                <h3>Clinic Patient System</h3>
+            </a>
+
+            <a href="portfolio.html#ecommerce" class="service-card portfolio-card">
+                <img src="assets/images/img/eco.png" alt="E-Commerce Website" loading="lazy">
+                <h3>E-Commerce Website</h3>
+            </a>
+
+        </div>
+        <a href="portfolio.html" class="view-more-btn">View Full Portfolio</a>
     </div>
-
-    <nav>
-        <ul class="nav-links">
-            <li><a class="active" href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="pricing.html">Price</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-
-        <!-- Search form -->
-        <form class="nav-search" action="services.html" method="get">
-            <input type="text" name="q" placeholder="Search services..." aria-label="Search Services">
-            <button type="submit">🔍</button>
-        </form>
-
-        <!-- Hamburger Menu -->
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
-</header>
+</section>
 
 
-    <!-- HERO SECTION -->
-    <section id="hero">
-        <div class="hero-slide active" style="background-image: url('assets/images/img/hero1.jpeg');">
-            <div class="hero-content">
-                <h2>Empowering Africa Through <span>Digital Innovation</span></h2>
-                <p>We provide modern, affordable, and professional digital services including website development, hosting, branding, and IT consulting.</p>
-                <a href="contact.html" class="btn-get-started">Request a Quote</a>
+        <!-- CALL TO ACTION -->
+        <section class="cta-section" aria-label="Call to Action">
+            <div class="container">
+                <h2>Ready to Grow Your Business with Technology?</h2>
+                <a href="contact.html" class="cta-btn">Request a Quote</a>
             </div>
-        </div>
-
-        <div class="hero-slide" style="background-image: url('assets/images/img/hero2.jpeg');">
-            <div class="hero-content">
-                <h2>Website Design & Smart Systems</h2>
-                <p>Get modern websites and professional systems for schools, clinics, and organizations designed to boost productivity and growth.</p>
-                <a href="services.html" class="btn-get-started">Explore Services</a>
-            </div>
-        </div>
-
-        <div class="hero-slide" style="background-image: url('assets/images/img/hero3.jpeg');">
-            <div class="hero-content">
-                <h2>Secure, Reliable, and Professional</h2>
-                <p>Our cybersecurity, maintenance, and IT consulting ensure your business runs smoothly and securely.</p>
-                <a href="portfolio.html" class="btn-get-started">View Portfolio</a>
-            </div>
-        </div>
-
-        <!-- Controls -->
-        <span id="prevHero" class="hero-control prev">&#10094;</span>
-        <span id="nextHero" class="hero-control next">&#10095;</span>
-
-        <!-- Dots -->
-        <div id="heroIndicators"></div>
-    </section>
-
-    <!-- ABOUT PREVIEW -->
-    <section class="about-preview">
-        <div class="container">
-            <h2>About AFRIBICON TECHNOLOGY</h2>
-            <p>
-                We are a digital solutions company helping businesses, schools, clinics, NGOs, and entrepreneurs 
-                embrace modern technology. We deliver high-quality, impactful digital services tailored to your needs.
-            </p>
-            <a href="about.html" class="learn-more-btn">Learn More</a>
-        </div>
-    </section>
-
-    <!-- SERVICE HIGHLIGHTS -->
-    <section class="home-services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="service-flex">
-                <div class="service-card">
-                    <img src="assets/images/img/web1.png" alt="Web Design">
-                    <h3>Website Design</h3>
-                    <p>Modern, mobile-friendly, and professional websites tailored for your business.</p>
-                </div>
-
-                <div class="service-card">
-                    <img src="assets/images/img/web1.png" alt="E-Commerce">
-                    <h3>E-Commerce Solutions</h3>
-                    <p>Sell your products online with secure and fast e-commerce platforms.</p>
-                </div>
-
-                <div class="service-card">
-                    <img src="assets/images/img/dez.png" alt="Branding">
-                    <h3>Branding & Graphic Design</h3>
-                    <p>Professional logos, branding kits, posters, and marketing materials.</p>
-                </div>
-
-                <div class="service-card">
-                    <img src="assets/images/img/it.png" alt="IT Consulting">
-                    <h3>IT Consulting</h3>
-                    <p>Expert guidance for technology adoption, systems, and digital transformation.</p>
-                </div>
-            </div>
-            <a href="services.html" class="view-more-btn">View All Services</a>
-        </div>
-    </section>
-
-    <!-- PORTFOLIO PREVIEW -->
-    <section class="portfolio-preview">
-        <div class="container">
-            <h2>Recent Projects</h2>
-            <div class="portfolio-flex">
-                <div class="portfolio-card">
-                    <img src="assets/images/img/school.png" alt="School Management System">
-                    <h3>School Management System</h3>
-                </div>
-
-                <div class="portfolio-card">
-                    <img src="assets/images/img/web1.png" alt="Clinic Patient System">
-                    <h3>Clinic Patient System</h3>
-                </div>
-
-                <div class="portfolio-card">
-                    <img src="assets/images/img/eco.png" alt="E-Commerce Website">
-                    <h3>E-Commerce Website</h3>
-                </div>
-            </div>
-            <a href="portfolio.html" class="view-more-btn">View Full Portfolio</a>
-        </div>
-    </section>
-
-    <!-- CALL TO ACTION -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Ready to Grow Your Business with Technology?</h2>
-            <a href="contact.html" class="cta-btn">Request a Quote</a>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- FOOTER -->
-   <footer>
-    <div class="footer-section footer-about">
-        <h3>About Us</h3>
-        <p>AFRIBICON TECHNOLOGY delivers professional digital solutions across Africa, helping businesses, schools, and organizations grow through modern technology.</p>
-    </div>
-
-    <div class="footer-section footer-links">
-        <h3>Quick Links</h3>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </div>
-
-    <div class="footer-section footer-contact">
-        <h3>Contact</h3>
-        <p>Email: info@afribi-tech.com</p>
-        <p>Phone: +260 97 000 0000</p>
-    </div>
-
-    <div class="footer-section footer-social">
-        <h3>Follow Us</h3>
-        <div class="social-icons">
-            <a href="#"><img src="assets/images/img/icon1.png" alt="Facebook"></a>
-            <a href="#"><img src="assets/images/img/icon2.png" alt="Twitter"></a>
-            <a href="#"><img src="assets/images/img/icon3.png" alt="LinkedIn"></a>
-            <a href="#"><img src="assets/images/img/icon4.png" alt="Instagram"></a>
+    <footer role="contentinfo">
+        <div class="footer-section footer-about">
+            <h3>About Us</h3>
+            <p>AFRIBICON TECHNOLOGY delivers professional digital solutions across Africa, helping businesses, schools, and organizations grow through modern technology.</p>
         </div>
-    </div>
-</footer>
 
-<div class="footer-bottom">
-    <p>© Copyright 2025 - AFRIBICON TECHNOLOGY. All rights reserved.</p>
-</div>
+        <div class="footer-section footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section footer-contact">
+            <h3>Contact</h3>
+            <p>Email: info@afribi-tech.com</p>
+            <p>Phone: +260 97 000 0000</p>
+        </div>
+
+        <div class="footer-section footer-social">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="#"><img src="assets/images/img/icon1.png" alt="Facebook" loading="lazy"></a>
+                <a href="#"><img src="assets/images/img/icon2.png" alt="Twitter" loading="lazy"></a>
+                <a href="#"><img src="assets/images/img/icon3.png" alt="LinkedIn" loading="lazy"></a>
+                <a href="#"><img src="assets/images/img/icon4.png" alt="Instagram" loading="lazy"></a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer-bottom">
+        <p>© Copyright 2025 - AFRIBICON TECHNOLOGY. All rights reserved.</p>
+    </div>
 
     <!-- Scripts -->
-    <script src="scripts/main.js"></script>
+    <script src="scripts/main.js" defer></script>
 </body>
 </html>
