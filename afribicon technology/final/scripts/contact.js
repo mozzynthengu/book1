@@ -1,47 +1,48 @@
-// Contact Form Script with Email Validation
 document.addEventListener("DOMContentLoaded", () => {
     const contactForm = document.getElementById("contactForm");
+    const statusText = document.getElementById("formStatus");
 
     contactForm.addEventListener("submit", (e) => {
-        e.preventDefault(); // Prevent actual form submission
+        e.preventDefault();
 
-        // Get form values
+        // Get values
         const name = document.getElementById("name").value.trim();
         const email = document.getElementById("email").value.trim();
         const service = document.getElementById("service").value;
         const message = document.getElementById("message").value.trim();
 
-        // Simple validation
+        // Validation
         if (!name || !email || !service || !message) {
-            alert("Please fill in all fields before submitting.");
+            statusText.textContent = "Please fill in all fields.";
+            statusText.style.color = "red";
             return;
         }
 
-        // Email format validation using regex
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailPattern.test(email)) {
-            alert("Please enter a valid email address.");
+            statusText.textContent = "Please enter a valid email address.";
+            statusText.style.color = "red";
             return;
         }
 
-        // Create a contact object
-        const contactEntry = {
-            name,
-            email,
-            service,
-            message,
-            submittedAt: new Date().toLocaleString()
-        };
+        statusText.textContent = "Sending message...";
+        statusText.style.color = "#1B5E20";
 
-        // Save to localStorage (array of contacts)
-        let contacts = JSON.parse(localStorage.getItem("contacts")) || [];
-        contacts.push(contactEntry);
-        localStorage.setItem("contacts", JSON.stringify(contacts));
-
-        // Notify user
-        alert("Thank you! Your message has been received.");
-
-        // Reset form
-        contactForm.reset();
+        // Send email using EmailJS
+        emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+            from_name: name,
+            reply_to: email,
+            service: service,
+            message: message
+        })
+        .then(() => {
+            statusText.textContent = "Message sent successfully! We’ll contact you soon.";
+            statusText.style.color = "green";
+            contactForm.reset();
+        })
+        .catch(() => {
+            statusText.textContent = "Failed to send message. Please try again.";
+            statusText.style.color = "red";
+        });
     });
 });
