@@ -22,8 +22,6 @@
     <link rel="preload" as="image" href="assets/images/img/hero1.jpeg">
     <link rel="preload" as="image" href="assets/images/img/hero2.jpeg">
     <link rel="preload" as="image" href="assets/images/img/hero3.jpeg">
-
-   
 </head>
 <body>
     <!-- HEADER / NAVIGATION -->
@@ -62,7 +60,8 @@
     <main role="main">
         <!-- HERO SECTION -->
         <section id="hero" aria-label="Hero Section">
-            <div class="hero-slide active" style="background-image: url('assets/images/img/hero1.jpeg');">
+            <div class="hero-slide active">
+                <img src="assets/images/img/hero1.jpeg" alt="Digital innovation in Africa" loading="eager" width="1920" height="1080">
                 <div class="hero-content">
                     <h2>Empowering Africa Through <span>Digital Innovation</span></h2>
                     <p>We provide modern, affordable, and professional digital services including website development, hosting, branding, and IT consulting.</p>
@@ -70,7 +69,8 @@
                 </div>
             </div>
 
-            <div class="hero-slide" style="background-image: url('assets/images/img/hero2.jpeg');">
+            <div class="hero-slide">
+                <img src="assets/images/img/hero2.jpeg" alt="Website design and smart systems" loading="lazy" width="1920" height="1080">
                 <div class="hero-content">
                     <h2>Website Design & Smart Systems</h2>
                     <p>Get modern websites and professional systems for schools, clinics, and organizations designed to boost productivity and growth.</p>
@@ -78,7 +78,8 @@
                 </div>
             </div>
 
-            <div class="hero-slide" style="background-image: url('assets/images/img/hero3.jpeg');">
+            <div class="hero-slide">
+                <img src="assets/images/img/hero3.jpeg" alt="Secure, reliable, and professional IT services" loading="lazy" width="1920" height="1080">
                 <div class="hero-content">
                     <h2>Secure, Reliable, and Professional</h2>
                     <p>Our cybersecurity, maintenance, and IT consulting ensure your business runs smoothly and securely.</p>
@@ -140,31 +141,28 @@
         </section>
 
         <!-- PORTFOLIO PREVIEW -->
-<section class="portfolio-preview">
-    <div class="container">
-        <h2>Recent Projects</h2>
-        <div class="service-flex"> <!-- Reusing service-flex styling -->
-            
-            <a href="portfolio.html#school-management" class="service-card portfolio-card">
-                <img src="assets/images/img/school.png" alt="School Management System" loading="lazy">
-                <h3>School Management System</h3>
-            </a>
+        <section class="portfolio-preview">
+            <div class="container">
+                <h2>Recent Projects</h2>
+                <div class="service-flex">
+                    <a href="portfolio.html#school-management" class="service-card portfolio-card">
+                        <img src="assets/images/img/school.png" alt="School Management System" loading="lazy">
+                        <h3>School Management System</h3>
+                    </a>
 
-            <a href="portfolio.html#clinic-patient" class="service-card portfolio-card">
-                <img src="assets/images/img/web1.png" alt="Clinic Patient System" loading="lazy">
-                <h3>Clinic Patient System</h3>
-            </a>
+                    <a href="portfolio.html#clinic-patient" class="service-card portfolio-card">
+                        <img src="assets/images/img/web1.png" alt="Clinic Patient System" loading="lazy">
+                        <h3>Clinic Patient System</h3>
+                    </a>
 
-            <a href="portfolio.html#ecommerce" class="service-card portfolio-card">
-                <img src="assets/images/img/eco.png" alt="E-Commerce Website" loading="lazy">
-                <h3>E-Commerce Website</h3>
-            </a>
-
-        </div>
-        <a href="portfolio.html" class="view-more-btn">View Full Portfolio</a>
-    </div>
-</section>
-
+                    <a href="portfolio.html#ecommerce" class="service-card portfolio-card">
+                        <img src="assets/images/img/eco.png" alt="E-Commerce Website" loading="lazy">
+                        <h3>E-Commerce Website</h3>
+                    </a>
+                </div>
+                <a href="portfolio.html" class="view-more-btn">View Full Portfolio</a>
+            </div>
+        </section>
 
         <!-- CALL TO ACTION -->
         <section class="cta-section" aria-label="Call to Action">
@@ -216,5 +214,6 @@
 
     <!-- Scripts -->
     <script src="scripts/main.js" defer></script>
+	<script src="Scripts/homde.js" defer></script>
 </body>
 </html>

@@ -4,43 +4,145 @@
 .service-detail {
     max-width: 900px;
     margin: 50px auto;
-    padding: 20px;
+    padding: 30px 25px;
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.service-detail.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .service-detail img {
     width: 100%;
-    height: 100%;
+    max-height: 400px;
     object-fit: contain;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 .service-detail h1 {
     color: #1B5E20;
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 20px;
 }
 
 .service-detail p {
     color: #333;
     font-size: 1rem;
-    margin-bottom: 15px;
-    line-height: 1.6;
+    margin-bottom: 18px;
+    line-height: 1.7;
 }
 
+/* =========================
+   Breadcrumbs
+============================ */
+.breadcrumbs {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.breadcrumbs a {
+    color: #1B5E20;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.breadcrumbs a:hover {
+    color: #4CAF50;
+    text-decoration: underline;
+}
+
+.breadcrumbs span {
+    color: #333;
+    font-weight: 400;
+}
+
+/* =========================
+   Navigation Buttons
+============================ */
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.navigation-buttons button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease, transform 0.2s;
+}
+
+/* Back Button */
 .back-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
     background-color: #1B5E20;
     color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
 }
 
 .back-btn:hover {
     background-color: #4CAF50;
+    transform: translateY(-2px);
+}
+
+/* Previous / Next Buttons */
+.prev-btn,
+.next-btn {
+    background-color: #E8F5E9;
+    color: #1B5E20;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background-color: #C8E6C9;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   Responsive
+============================ */
+@media (max-width: 768px) {
+    .service-detail {
+        padding: 20px 18px;
+    }
+
+    .navigation-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .breadcrumbs {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-detail {
+        margin: 30px 15px;
+        padding: 15px;
+    }
+
+    .service-detail h1 {
+        font-size: 1.6rem;
+    }
+
+    .navigation-buttons button {
+        width: 100%;
+        font-size: 0.95rem;
+    }
 }

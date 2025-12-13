@@ -216,7 +216,7 @@
     box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
-/* Fix for Lighthouse: avoid CLS by forcing image size */
+/* Section for img*/
 .service-card img {
     width: 100%;
     height: auto;

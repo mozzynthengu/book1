@@ -1,6 +1,8 @@
 /* ============================================================
-   SERVICES HERO SECTION
-   ============================================================ */
+   SERVICES PAGE STYLES (Optimized)
+============================================================ */
+
+/* --- Services Hero --- */
 .services-hero {
     text-align: center;
     margin: 40px 20px;
@@ -19,9 +21,7 @@
     margin: 0 auto;
 }
 
-/* ============================================================
-   SERVICE FILTER DROPDOWN
-   ============================================================ */
+/* --- Service Filter Dropdown --- */
 .service-filter {
     display: flex;
     justify-content: center;
@@ -49,9 +49,7 @@
     border-color: #4CAF50;
 }
 
-/* ============================================================
-   SERVICES GRID LAYOUT
-   ============================================================ */
+/* --- Services Grid --- */
 .services-grid {
     display: flex;
     flex-wrap: wrap;
@@ -60,35 +58,44 @@
     padding: 20px;
 }
 
-/* ============================================================
-   INDIVIDUAL SERVICE CARD
-   ============================================================ */
+/* --- Service Card --- */
 .service-card {
     flex: 1 1 250px;
     max-width: 300px;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     padding: 20px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     transition: all 0.3s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-card.hide {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
 }
 
 .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     cursor: pointer;
     background-color: #f1fdf1;
 }
 
 .service-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    margin-bottom: 20px;
+   width: 100%;
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+
+    border-radius: 10px;
+
 }
 
 .service-card h3 {
@@ -103,9 +110,7 @@
     margin-bottom: 15px;
 }
 
-/* ============================================================
-   READ MORE BUTTON
-   ============================================================ */
+/* --- Read More Button --- */
 .read-more-btn {
     margin: 5px 0;
     padding: 8px 15px;
@@ -122,24 +127,7 @@
     background-color: #4CAF50;
 }
 
-/* ============================================================
-   CARD FILTER ANIMATION
-   ============================================================ */
-.service-card {
-    opacity: 1;
-    transform: translateY(0);
-    transition: all 0.4s ease-in-out;
-}
-
-.service-card.hide {
-    opacity: 0;
-    transform: translateY(20px);
-    pointer-events: none;
-}
-
-/* ============================================================
-   MODAL POPUP STYLES
-   ============================================================ */
+/* --- Modal Popup --- */
 .service-modal {
     display: none;
     position: fixed;
@@ -147,7 +135,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0,0,0,0.6);
     justify-content: center;
     align-items: center;
     z-index: 1000;
@@ -177,17 +165,11 @@
     color: #1B5E20;
 }
 
-/* ============================================================
-   RESPONSIVE BREAKPOINTS
-   ============================================================ */
+/* --- Responsive --- */
 @media (max-width: 768px) {
-    .service-card {
-        flex: 1 1 45%;
-    }
+    .service-card { flex: 1 1 45%; }
 }
 
 @media (max-width: 480px) {
-    .service-card {
-        flex: 1 1 90%;
-    }
+    .service-card { flex: 1 1 90%; }
 }
