@@ -2,12 +2,12 @@
 // Portfolio Data
 // =========================
 const portfolioItems = [
-    { id: 1, title: "Corporate Website", category: "web", description: "A modern, responsive corporate website with sleek design and fast performance.", image: "assets/images/img/portfolio1.png" },
-    { id: 2, title: "E-Commerce Platform", category: "web", description: "An online store with secure payment integration and inventory management.", image: "assets/images/img/portfolio2.png" },
-    { id: 3, title: "Branding for Startup", category: "branding", description: "Logo design, brand colors, typography, and marketing materials for a startup.", image: "assets/images/img/portfolio3.png" },
-    { id: 4, title: "Digital Marketing Campaign", category: "marketing", description: "SEO, social media management, and online advertising for client growth.", image: "assets/images/img/portfolio4.png" },
-    { id: 5, title: "Mobile App Development", category: "mobile", description: "User-friendly mobile application for Android and iOS with seamless UX.", image: "assets/images/img/portfolio5.png" },
-    { id: 6, title: "Website Redesign", category: "web", description: "Redesigned client website for modern look, improved UX and faster load times.", image: "assets/images/img/portfolio6.png" }
+    { id: 1, title: "Corporate Website", category: "web", description: "A modern, responsive corporate website with sleek design and fast performance.", image: "assets/images/img/hero1.jpeg" },
+    { id: 2, title: "E-Commerce Platform", category: "web", description: "An online store with secure payment integration and inventory management.", image: "assets/images/img/eco.jpeg" },
+    { id: 3, title: "Branding for Startup", category: "branding", description: "Logo design, brand colors, typography, and marketing materials for a startup.", image: "assets/images/img/dez.png" },
+    { id: 4, title: "Digital Marketing Campaign", category: "marketing", description: "SEO, social media management, and online advertising for client growth.", image: "assets/images/img/digit.jpeg" },
+    { id: 5, title: "Mobile App Development", category: "mobile", description: "User-friendly mobile application for Android and iOS with seamless UX.", image: "assets/images/img/Mobile.jpeg" },
+    { id: 6, title: "Clinic Patient System", category: "web", description: "design Clinic System to manage Patient.", image: "assets/images/img/Clinic.png" }
 ];
 
 // =========================

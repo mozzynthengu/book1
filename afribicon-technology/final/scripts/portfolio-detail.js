@@ -15,7 +15,7 @@ const portfolioItems = [
         title: "Corporate Website",
         category: "web",
         description: "A modern, responsive corporate website with sleek design and fast performance.",
-        image: "assets/images/img/portfolio1.png",
+        image: "assets/images/img/hero1.jpeg",
         details: "Built with HTML, CSS, and JavaScript, fully optimized for SEO and mobile devices."
     },
     {
@@ -23,7 +23,7 @@ const portfolioItems = [
         title: "E-Commerce Platform",
         category: "web",
         description: "An online store with secure payment integration and inventory management.",
-        image: "assets/images/img/portfolio2.png",
+        image: "assets/images/img/eco.jpeg",
         details: "Developed on Shopify and integrated with payment gateways and logistics systems."
     },
     {
@@ -31,7 +31,7 @@ const portfolioItems = [
         title: "Branding for Startup",
         category: "branding",
         description: "Logo design, brand colors, typography, and marketing materials for a startup.",
-        image: "assets/images/img/portfolio3.png",
+        image: "assets/images/img/dez.png",
         details: "Focused on brand consistency and visual identity across all platforms."
     },
     {
@@ -39,7 +39,7 @@ const portfolioItems = [
         title: "Digital Marketing Campaign",
         category: "marketing",
         description: "SEO, social media management, and online advertising for client growth.",
-        image: "assets/images/img/portfolio4.png",
+        image: "assets/images/img/digit.jpeg",
         details: "Campaign analytics, performance tracking, and ROI optimization included."
     },
     {
@@ -47,15 +47,15 @@ const portfolioItems = [
         title: "Mobile App Development",
         category: "mobile",
         description: "User-friendly mobile application for Android and iOS with seamless UX.",
-        image: "assets/images/img/portfolio5.png",
+        image: "assets/images/img/mobile.jpeg",
         details: "Built using Flutter, integrated with backend APIs and push notifications."
     },
     {
         id: "6",
-        title: "Website Redesign",
+        title: "Clinic Patient System",
         category: "web",
-        description: "Redesigned client website for modern look, improved UX and faster load times.",
-        image: "assets/images/img/portfolio6.png",
+        description: "Our web-based Clinic System lets you effortlessly manage patients, appointments, and medical records. From registering new patients to tracking medical histories and scheduling visits, everything is accessible from any device, making patient care organized, efficient, and stress-free..",
+        image: "assets/images/img/clinic.png",
         details: "Implemented responsive design, accessibility improvements, and SEO optimization."
     }
 ];
