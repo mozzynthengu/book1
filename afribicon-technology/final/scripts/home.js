@@ -1,3 +1,4 @@
+/* eslint-env browser */
 /* ============================================================
    HOME.JS — HERO SLIDER + MOBILE NAV + SEARCH
 ============================================================ */
@@ -22,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const dots = indicators.querySelectorAll("span");
 
-        function showSlide(index) {
+        const showSlide = index => {
             slides.forEach(s => s.classList.remove("active"));
             dots.forEach(d => d.classList.remove("active-dot"));
 
@@ -30,17 +31,17 @@ document.addEventListener("DOMContentLoaded", () => {
             dots[index].classList.add("active-dot");
 
             currentSlide = index;
-        }
+        };
 
-        function nextSlide() { showSlide((currentSlide + 1) % slides.length); }
-        function prevSlide() { showSlide((currentSlide - 1 + slides.length) % slides.length); }
+        const nextSlide = () => showSlide((currentSlide + 1) % slides.length);
+        const prevSlide = () => showSlide((currentSlide - 1 + slides.length) % slides.length);
 
         let slideInterval = setInterval(nextSlide, 6000);
 
-        function resetInterval() {
+        const resetInterval = () => {
             clearInterval(slideInterval);
             slideInterval = setInterval(nextSlide, 6000);
-        }
+        };
 
         // Navigation buttons
         if (nextBtn) nextBtn.addEventListener("click", () => { nextSlide(); resetInterval(); });
@@ -48,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Dot click
         dots.forEach(dot => {
-            dot.addEventListener("click", (e) => {
+            dot.addEventListener("click", e => {
                 showSlide(Number(e.target.dataset.index));
                 resetInterval();
             });
@@ -59,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
         slides.forEach(slide => {
             slide.addEventListener("touchstart", e => startX = e.touches[0].clientX);
             slide.addEventListener("touchend", e => {
-                let endX = e.changedTouches[0].clientX;
+                const endX = e.changedTouches[0].clientX;
                 if (startX - endX > 50) { nextSlide(); resetInterval(); }
                 if (endX - startX > 50) { prevSlide(); resetInterval(); }
             });
@@ -104,9 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (searchField) {
         const urlParams = new URLSearchParams(window.location.search);
         const searchQuery = urlParams.get("q");
-        if (searchQuery) {
-            searchField.value = searchQuery;
-        }
+        if (searchQuery) searchField.value = searchQuery;
     }
 
 });

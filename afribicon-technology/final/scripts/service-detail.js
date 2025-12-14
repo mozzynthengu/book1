@@ -1,3 +1,6 @@
+/* eslint-env browser */
+/* exported navigateService */
+
 // =========================
 // Services Data
 // =========================
@@ -61,8 +64,8 @@ if (service) {
     // Render content
     serviceDetailContainer.innerHTML = `
         ${breadcrumbs}
-        <img src="${service.image}" alt="${service.title}" loading="lazy" id="service-title">
         <h1 id="service-title">${service.title}</h1>
+        <img src="${service.image}" alt="${service.title}" loading="lazy">
         <p>${service.description}</p>
         <p>${service.details}</p>
         ${navigationButtons}

@@ -25,16 +25,16 @@
 </head>
 <body>
     <!-- HEADER / NAVIGATION -->
-    <header role="banner">
+    <header>
         <div class="logo">
-            <img src="assets/images/img/logob.png" alt="Afribicon Technology Logo" width="80" height="auto">
+            <img src="assets/images/img/logob.png" alt="Afribicon Technology Logo" width="80">
             <div class="logo-text">
                 <h1>AFRIBICON</h1>
                 <span>TECHNOLOGY</span>
             </div>
         </div>
 
-        <nav role="navigation" aria-label="Main Navigation">
+        <nav aria-label="Main Navigation">
             <ul class="nav-links">
                 <li><a class="active" href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -49,7 +49,7 @@
                 <button type="submit">🔍</button>
             </form>
 
-            <div class="hamburger" aria-label="Toggle Menu" role="button">
+            <div class="hamburger" role="button" aria-label="Toggle Menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -57,7 +57,7 @@
         </nav>
     </header>
 
-    <main role="main">
+    <main>
         <!-- HERO SECTION -->
         <section id="hero" aria-label="Hero Section">
             <div class="hero-slide active">
@@ -88,11 +88,11 @@
             </div>
 
             <!-- Controls -->
-            <span id="prevHero" class="hero-control prev" aria-label="Previous Slide">&#10094;</span>
-            <span id="nextHero" class="hero-control next" aria-label="Next Slide">&#10095;</span>
+            <span id="prevHero" class="hero-control prev" role="button" aria-label="Previous Slide">&#10094;</span>
+            <span id="nextHero" class="hero-control next" role="button" aria-label="Next Slide">&#10095;</span>
 
             <!-- Dots -->
-            <div id="heroIndicators" aria-label="Hero Slider Pagination"></div>
+            <div id="heroIndicators" role="region" aria-label="Hero Slider Pagination"></div>
         </section>
 
         <!-- ABOUT PREVIEW -->
@@ -174,14 +174,14 @@
     </main>
 
     <!-- FOOTER -->
-    <footer role="contentinfo">
+    <footer>
         <div class="footer-section footer-about">
-            <h3>About Us</h3><hr/>
+            <h3>About Us</h3><hr>
             <p>AFRIBICON TECHNOLOGY delivers professional digital solutions across Africa, helping businesses, schools, and organizations grow through modern technology.</p>
         </div>
 
         <div class="footer-section footer-links">
-            <h3>Quick Links</h3><hr/>
+            <h3>Quick Links</h3><hr>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
@@ -192,13 +192,13 @@
         </div>
 
         <div class="footer-section footer-contact">
-            <h3>Contact</h3><hr/>
+            <h3>Contact</h3><hr>
             <p>Email: info@afribi-tech.com</p>
             <p>Phone: +260 97 000 0000</p>
         </div>
 
         <div class="footer-section footer-social">
-            <h3>Follow Us</h3><hr/>
+            <h3>Follow Us</h3><hr>
             <div class="social-icons">
                 <a href="#"><img src="assets/images/img/icon1.png" alt="Facebook" loading="lazy"></a>
                 <a href="#"><img src="assets/images/img/icon2.png" alt="Twitter" loading="lazy"></a>
@@ -214,6 +214,6 @@
 
     <!-- Scripts -->
     <script src="scripts/main.js" defer></script>
-	<script src="Scripts/homde.js" defer></script>
+    <script src="Scripts/homde.js" defer></script>
 </body>
 </html>

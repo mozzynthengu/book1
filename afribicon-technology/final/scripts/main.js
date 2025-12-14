@@ -1,3 +1,5 @@
+/* eslint-env browser */
+/* global services, servicesGrid, renderServicesAnimated */
 /* ============================================================
    MAIN JS — COMMON FUNCTIONS ACROSS PAGES
 ============================================================ */
@@ -19,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         // Close menu when clicking outside
-        document.addEventListener("click", (e) => {
+        document.addEventListener("click", e => {
             if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
                 navLinks.classList.remove("show");
                 hamburger.classList.remove("active");
@@ -48,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (slides.length > 0) {
         let currentSlide = 0;
 
-        // Create dots
+        // Create dots dynamically
         slides.forEach((_, index) => {
             const dot = document.createElement("span");
             dot.dataset.index = index;
@@ -58,43 +60,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const dots = indicators.querySelectorAll("span");
 
-        function showSlide(index) {
+        const showSlide = index => {
             slides.forEach(s => s.classList.remove("active"));
             dots.forEach(d => d.classList.remove("active-dot"));
             slides[index].classList.add("active");
             dots[index].classList.add("active-dot");
             currentSlide = index;
-        }
+        };
 
-        function nextSlide() { showSlide((currentSlide + 1) % slides.length); }
-        function prevSlide() { showSlide((currentSlide - 1 + slides.length) % slides.length); }
+        const nextSlide = () => showSlide((currentSlide + 1) % slides.length);
+        const prevSlide = () => showSlide((currentSlide - 1 + slides.length) % slides.length);
 
         let slideInterval = setInterval(nextSlide, 6000);
-        function resetInterval() {
+
+        const resetInterval = () => {
             clearInterval(slideInterval);
             slideInterval = setInterval(nextSlide, 6000);
-        }
+        };
 
         if (nextBtn) nextBtn.addEventListener("click", () => { nextSlide(); resetInterval(); });
         if (prevBtn) prevBtn.addEventListener("click", () => { prevSlide(); resetInterval(); });
 
-        dots.forEach(dot => dot.addEventListener("click", (e) => {
+        dots.forEach(dot => dot.addEventListener("click", e => {
             showSlide(Number(e.target.dataset.index));
             resetInterval();
         }));
 
-        // Mobile swipe
+        // Touch swipe for mobile
         let startX = 0;
         slides.forEach(slide => {
             slide.addEventListener("touchstart", e => startX = e.touches[0].clientX);
             slide.addEventListener("touchend", e => {
-                let endX = e.changedTouches[0].clientX;
+                const endX = e.changedTouches[0].clientX;
                 if (startX - endX > 50) { nextSlide(); resetInterval(); }
                 if (endX - startX > 50) { prevSlide(); resetInterval(); }
             });
         });
 
-        // Initialize
         showSlide(0);
     }
 
@@ -102,26 +104,28 @@ document.addEventListener("DOMContentLoaded", () => {
        SERVICE SEARCH (if present)
     ======================== */
     const searchField = document.querySelector(".nav-search input");
-    const urlParams = new URLSearchParams(window.location.search);
-    const searchQuery = urlParams.get("q");
+    if (searchField) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchQuery = urlParams.get("q");
 
-    if (searchQuery && searchField) {
-        searchField.value = searchQuery;
+        if (searchQuery) {
+            searchField.value = searchQuery;
 
-        if (typeof services !== "undefined" && typeof renderServicesAnimated !== "undefined") {
-            const filtered = services.filter(service =>
-                service.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                service.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                service.category.toLowerCase().includes(searchQuery.toLowerCase())
-            );
+            if (typeof services !== "undefined" && typeof renderServicesAnimated !== "undefined") {
+                const filtered = services.filter(service =>
+                    service.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    service.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    service.category.toLowerCase().includes(searchQuery.toLowerCase())
+                );
 
-            if (filtered.length > 0) {
-                renderServicesAnimated(filtered);
-            } else if (typeof servicesGrid !== "undefined") {
-                servicesGrid.innerHTML = `
-                    <p style="text-align:center; font-size:1.2rem; color:#1B5E20;">
-                        No services found for '${searchQuery}'
-                    </p>`;
+                if (filtered.length > 0) {
+                    renderServicesAnimated(filtered);
+                } else if (typeof servicesGrid !== "undefined") {
+                    servicesGrid.innerHTML = `
+                        <p style="text-align:center; font-size:1.2rem; color:#1B5E20;">
+                            No services found for '${searchQuery}'
+                        </p>`;
+                }
             }
         }
     }

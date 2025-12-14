@@ -22,21 +22,19 @@
     <link rel="preload" as="image" href="assets/images/img/hero1.jpeg">
     <link rel="preload" as="image" href="assets/images/img/hero2.jpeg">
     <link rel="preload" as="image" href="assets/images/img/hero3.jpeg">
-
-   
 </head>
 <body>
     <!-- HEADER / NAVIGATION -->
-    <header role="banner">
+    <header>
         <div class="logo">
-            <img src="assets/images/img/logob.png" alt="Afribicon Technology Logo" width="80" height="auto">
+            <img src="assets/images/img/logob.png" alt="Afribicon Technology Logo" width="80">
             <div class="logo-text">
                 <h1>AFRIBICON</h1>
                 <span>TECHNOLOGY</span>
             </div>
         </div>
 
-        <nav role="navigation" aria-label="Main Navigation">
+        <nav aria-label="Main Navigation">
             <ul class="nav-links">
                 <li><a class="active" href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -58,103 +56,96 @@
             </div>
         </nav>
     </header>
-<!-- SERVICES HERO -->
-<section class="services-hero">
-    <h1>Our Services</h1>
-    <p>Professional digital solutions tailored for businesses, schools, clinics, NGOs, and entrepreneurs.</p>
-</section>
 
-<!-- SERVICE FILTER DROPDOWN -->
-<section class="service-filter">
-    <label for="serviceCategory">Filter by Category:</label>
-    <select id="serviceCategory">
-        <option value="all">All</option>
-        <option value="web">Website Design</option>
-        <option value="hosting">Hosting</option>
-        <option value="ecommerce">E-Commerce</option>
-        <option value="custom">Custom Systems</option>
-        <option value="school">School/Clinic Systems</option>
-        <option value="branding">Branding</option>
-        <option value="it">IT Consulting</option>
-        <option value="maintenance">Maintenance</option>
-        <option value="cybersecurity">Cybersecurity</option>
-        <option value="mobile">Mobile App Development</option>
-        <option value="marketing">Digital Marketing</option>
-        <option value="cloud">Cloud Solutions</option>
-    </select>
-</section>
+    <!-- SERVICES HERO -->
+    <section class="services-hero">
+        <h2>Our Services</h2>
+        <p>Professional digital solutions tailored for businesses, schools, clinics, NGOs, and entrepreneurs.</p>
+    </section>
 
-<!-- SERVICES GRID -->
-<section class="services-grid" id="servicesGrid">
-    <!-- JS dynamically adds services here -->
-</section>
+    <!-- SERVICE FILTER DROPDOWN -->
+    <section class="service-filter">
+        <h2>Filter Services</h2>
+        <label for="serviceCategory">Filter by Category:</label>
+        <select id="serviceCategory">
+            <option value="all">All</option>
+            <option value="web">Website Design</option>
+            <option value="hosting">Hosting</option>
+            <option value="ecommerce">E-Commerce</option>
+            <option value="custom">Custom Systems</option>
+            <option value="school">School/Clinic Systems</option>
+            <option value="branding">Branding</option>
+            <option value="it">IT Consulting</option>
+            <option value="maintenance">Maintenance</option>
+            <option value="cybersecurity">Cybersecurity</option>
+            <option value="mobile">Mobile App Development</option>
+            <option value="marketing">Digital Marketing</option>
+            <option value="cloud">Cloud Solutions</option>
+        </select>
+    </section>
 
-<!-- SERVICE MODAL -->
-<div id="serviceModal" class="service-modal">
-    <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <h3 id="modalTitle"></h3>
-        <img id="modalImage" src="" alt="">
-        <p id="modalDescription"></p>
-        <p id="modalExtra"></p>
-    </div>
-</div>
+    <!-- SERVICES GRID -->
+    <section class="services-grid" id="servicesGrid">
+        <h2>Available Services</h2>
+        <!-- JS dynamically adds services here -->
+    </section>
 
-<!-- FOOTER -->
-   <footer>
-    <div class="footer-section footer-about">
-        <h3>About Us</h3><hr/>
-        <p>AFRIBICON TECHNOLOGY delivers professional digital solutions across Africa, helping businesses, schools, and organizations grow through modern technology.</p>
-    </div>
-
-    <div class="footer-section footer-links">
-        <h3>Quick Links</h3><hr/>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </div>
-
-    <div class="footer-section footer-contact">
-        <h3>Contact</h3><hr/>
-        <p>Email: info@afribi-tech.com</p>
-        <p>Phone: +260 97 000 0000</p>
-    </div>
-
-    <div class="footer-section footer-social">
-        <h3>Follow Us</h3><hr/>
-        <div class="social-icons">
-            <a href="#"><img src="assets/images/img/icon1.png" alt="Facebook"></a>
-            <a href="#"><img src="assets/images/img/icon2.png" alt="Twitter"></a>
-            <a href="#"><img src="assets/images/img/icon3.png" alt="LinkedIn"></a>
-            <a href="#"><img src="assets/images/img/icon4.png" alt="Instagram"></a>
+    <!-- SERVICE MODAL -->
+    <div id="serviceModal" class="service-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modalTitle">Service Title</h3>
+            <img id="modalImage" src="assets/images/placeholder.png" alt="Service Image">
+            <p id="modalDescription">Service description will appear here.</p>
+            <p id="modalExtra"></p>
         </div>
     </div>
-</footer>
 
-<div class="footer-bottom">
-    <p>© Copyright 2025 - AFRIBICON TECHNOLOGY. All rights reserved.</p>
-</div>
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-section footer-about">
+            <h3>About Us</h3>
+            <hr>
+            <p>AFRIBICON TECHNOLOGY delivers professional digital solutions across Africa, helping businesses, schools, and organizations grow through modern technology.</p>
+        </div>
+
+        <div class="footer-section footer-links">
+            <h3>Quick Links</h3>
+            <hr>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section footer-contact">
+            <h3>Contact</h3>
+            <hr>
+            <p>Email: info@afribi-tech.com</p>
+            <p>Phone: +274 27 37463</p>
+        </div>
+
+        <div class="footer-section footer-social">
+            <h3>Follow Us</h3>
+            <hr>
+            <div class="social-icons">
+                <a href="#"><img src="assets/images/img/icon1.png" alt="Facebook"></a>
+                <a href="#"><img src="assets/images/img/icon2.png" alt="Twitter"></a>
+                <a href="#"><img src="assets/images/img/icon3.png" alt="LinkedIn"></a>
+                <a href="#"><img src="assets/images/img/icon4.png" alt="Instagram"></a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer-bottom">
+        <p>© Copyright 2025 - AFRIBICON TECHNOLOGY. All rights reserved.</p>
+    </div>
 
     <!-- Scripts -->
-	<script src="scripts/services.js"></script>
+    <script src="scripts/services.js"></script>
     <script src="scripts/main.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -16,138 +16,140 @@
 
     <!-- HEADER / NAVIGATION -->
     <header>
-    <div class="logo">
-        <img src="assets/images/img/logob.png" alt="Afribicon Technology Logo">
-        <div class="logo-text">
-            <h1>AFRIBICON</h1>
-            <span>TECHNOLOGY</span>
+        <div class="logo">
+            <img src="assets/images/img/logob.png" alt="Afribicon Technology Logo">
+            <div class="logo-text">
+                <h1>AFRIBICON</h1>
+                <span>TECHNOLOGY</span>
+            </div>
         </div>
-    </div>
 
-    <nav>
-        <ul class="nav-links">
-            <li><a class="active" href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="pricing.html">Price</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="pricing.html">Price</a></li>
+                <li><a class="active" href="contact.html">Contact</a></li>
+            </ul>
 
-        <!-- Search form -->
-        <form class="nav-search" action="services.html" method="get">
-            <input type="text" name="q" placeholder="Search services..." aria-label="Search Services">
-            <button type="submit">🔍</button>
-        </form>
+            <!-- Search form -->
+            <form class="nav-search" action="services.html" method="get">
+                <input type="text" name="q" placeholder="Search services..." aria-label="Search Services">
+                <button type="submit">🔍</button>
+            </form>
 
-        <!-- Hamburger Menu -->
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
-</header>
-
-
+            <!-- Hamburger Menu -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
 
     <!-- CONTACT HERO -->
     <section class="contact-hero">
-        <h1>Get in Touch</h1>
+        <h2>Get in Touch</h2>
         <p>We’re here to help your business grow. Send us a message and we’ll respond as soon as possible.</p>
     </section>
 
     <!-- CONTACT FORM -->
-    <section class="contact-form-section">
-        <form id="contactForm">
-            <div class="form-group">
-                <label for="name">Name *</label>
-                <input type="text" id="name" name="name" placeholder="Your full name" required>
-            </div>
+   <!-- CONTACT FORM -->
+<section class="contact-form-section">
+    <form id="contactForm">
+        <div class="form-group">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
+        </div>
 
-            <div class="form-group">
-                <label for="email">Email *</label>
-                <input type="email" id="email" name="email" placeholder="Enter your Email" required>
-            </div>
+        <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+        </div>
 
-            <div class="form-group">
-                <label for="service">Service Interested In *</label>
-                <select id="service" name="service" required>
-                    <option value="">Select a service</option>
-                    <option value="website">Website Design</option>
-                    <option value="hosting">Hosting</option>
-                    <option value="ecommerce">E-Commerce</option>
-                    <option value="custom">Custom Systems</option>
-                    <option value="school">School/Clinic Systems</option>
-                    <option value="branding">Branding</option>
-                    <option value="it">IT Consulting</option>
-                    <option value="maintenance">Maintenance</option>
-                    <option value="cybersecurity">Cybersecurity</option>
-                    <option value="mobile">Mobile App Development</option>
-                    <option value="marketing">Digital Marketing</option>
-                    <option value="cloud">Cloud Solutions</option>
-                </select>
-            </div>
+        <div class="form-group">
+            <label for="service">Service Interested In *</label>
+            <select id="service" name="service" required>
+                <option value="">Select a service</option>
+                <option value="website">Website Design</option>
+                <option value="hosting">Hosting</option>
+                <option value="ecommerce">E-Commerce</option>
+                <option value="custom">Custom Systems</option>
+                <option value="school">School/Clinic Systems</option>
+                <option value="branding">Branding</option>
+                <option value="it">IT Consulting</option>
+                <option value="maintenance">Maintenance</option>
+                <option value="cybersecurity">Cybersecurity</option>
+                <option value="mobile">Mobile App Development</option>
+                <option value="marketing">Digital Marketing</option>
+                <option value="cloud">Cloud Solutions</option>
+            </select>
+        </div>
 
-            <div class="form-group">
-                <label for="message">Message *</label>
-                <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
-            </div>
+        <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+        </div>
 
-            <button type="submit" class="cta-btn">Send Message</button>
-        </form>
-    </section>
+        <button type="submit" class="cta-btn">Send Message</button>
+
+        <!-- Status message appears here -->
+        <p id="formStatus" class="form-status"></p>
+    </form>
+</section>
+
 
     <!-- BUSINESS CONTACT INFO -->
     <section class="contact-info">
         <h2>Our Contact Info</h2>
-        <p>Email: info@Afribicon-tech.com</p>
+        <p>Email: info@afribi-tech.com</p>
         <p>Phone: +27 742737463</p>
         <p>Address: Lusaka, Zambia</p>
     </section>
 
     <!-- FOOTER -->
-    <!-- FOOTER -->
-   <footer>
-    <div class="footer-section footer-about">
-        <h3>About Us</h3><hr/>
-        <p>AFRIBICON TECHNOLOGY delivers professional digital solutions across Africa, helping businesses, schools, and organizations grow through modern technology.</p>
-    </div>
-
-    <div class="footer-section footer-links">
-        <h3>Quick Links</h3><hr/>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </div>
-
-    <div class="footer-section footer-contact">
-        <h3>Contact</h3><hr/>
-        <p>Email: info@afribi-tech.com</p>
-        <p>Phone: +260 97 000 0000</p>
-    </div>
-
-    <div class="footer-section footer-social">
-        <h3>Follow Us</h3><hr/>
-        <div class="social-icons">
-            <a href="#"><img src="assets/images/img/icon1.png" alt="Facebook"></a>
-            <a href="#"><img src="assets/images/img/icon2.png" alt="Twitter"></a>
-            <a href="#"><img src="assets/images/img/icon3.png" alt="LinkedIn"></a>
-            <a href="#"><img src="assets/images/img/icon4.png" alt="Instagram"></a>
+    <footer>
+        <div class="footer-section footer-about">
+            <h3>About Us</h3><hr>
+            <p>AFRIBICON TECHNOLOGY delivers professional digital solutions across Africa, helping businesses, schools, and organizations grow through modern technology.</p>
         </div>
-    </div>
-</footer>
 
-<div class="footer-bottom">
-    <p>© Copyright 2025 - AFRIBICON TECHNOLOGY. All rights reserved.</p>
-</div>
+        <div class="footer-section footer-links">
+            <h3>Quick Links</h3><hr>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section footer-contact">
+            <h3>Contact</h3><hr>
+            <p>Email: info@afribi-tech.com</p>
+            <p>Phone: +260 97 000 0000</p>
+        </div>
+
+        <div class="footer-section footer-social">
+            <h3>Follow Us</h3><hr>
+            <div class="social-icons">
+                <a href="#"><img src="assets/images/img/icon1.png" alt="Facebook"></a>
+                <a href="#"><img src="assets/images/img/icon2.png" alt="Twitter"></a>
+                <a href="#"><img src="assets/images/img/icon3.png" alt="LinkedIn"></a>
+                <a href="#"><img src="assets/images/img/icon4.png" alt="Instagram"></a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer-bottom">
+        <p>© Copyright 2025 - AFRIBICON TECHNOLOGY. All rights reserved.</p>
+    </div>
 
     <!-- Scripts -->
-	<script src="Scripts/contact.js"></script>
+    <script src="scripts/contact.js"></script>
     <script src="scripts/main.js"></script>
 </body>
 </html>
