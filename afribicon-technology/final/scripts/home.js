@@ -1,111 +1,120 @@
 /* eslint-env browser */
 /* ============================================================
-   HOME.JS — HERO SLIDER + MOBILE NAV + SEARCH
+   HOME.JS — HERO SLIDER (HOME PAGE ONLY)
 ============================================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* ================= HERO SLIDER ================= */
-    let currentSlide = 0;
+    /* ========================
+       HERO SLIDER SETUP
+    ======================== */
     const slides = document.querySelectorAll(".hero-slide");
     const prevBtn = document.getElementById("prevHero");
     const nextBtn = document.getElementById("nextHero");
     const indicators = document.getElementById("heroIndicators");
 
-    if (slides.length > 0) {
-        // Create dots dynamically
-        slides.forEach((_, index) => {
-            const dot = document.createElement("span");
-            dot.dataset.index = index;
-            dot.setAttribute("aria-label", `Slide ${index + 1}`);
-            indicators.appendChild(dot);
+    // Exit early if hero does not exist
+    if (!slides.length || !indicators) return;
+
+    let currentSlide = 0;
+    let slideInterval;
+
+    /* ========================
+       CREATE INDICATORS
+    ======================== */
+    slides.forEach((_, index) => {
+        const dot = document.createElement("span");
+        dot.dataset.index = index;
+        dot.setAttribute("aria-label", `Slide ${index + 1}`);
+        indicators.appendChild(dot);
+    });
+
+    const dots = indicators.querySelectorAll("span");
+
+    /* ========================
+       SLIDE CONTROLS
+    ======================== */
+    const showSlide = index => {
+        slides.forEach(slide => slide.classList.remove("active"));
+        dots.forEach(dot => dot.classList.remove("active-dot"));
+
+        slides[index].classList.add("active");
+        dots[index].classList.add("active-dot");
+
+        currentSlide = index;
+    };
+
+    const nextSlide = () => showSlide((currentSlide + 1) % slides.length);
+    const prevSlide = () => showSlide((currentSlide - 1 + slides.length) % slides.length);
+
+    /* ========================
+       AUTO SLIDE
+    ======================== */
+    const startAutoSlide = () => {
+        slideInterval = setInterval(nextSlide, 6000);
+    };
+
+    const resetAutoSlide = () => {
+        clearInterval(slideInterval);
+        startAutoSlide();
+    };
+
+    /* ========================
+       BUTTON EVENTS
+    ======================== */
+    if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
+            nextSlide();
+            resetAutoSlide();
         });
-
-        const dots = indicators.querySelectorAll("span");
-
-        const showSlide = index => {
-            slides.forEach(s => s.classList.remove("active"));
-            dots.forEach(d => d.classList.remove("active-dot"));
-
-            slides[index].classList.add("active");
-            dots[index].classList.add("active-dot");
-
-            currentSlide = index;
-        };
-
-        const nextSlide = () => showSlide((currentSlide + 1) % slides.length);
-        const prevSlide = () => showSlide((currentSlide - 1 + slides.length) % slides.length);
-
-        let slideInterval = setInterval(nextSlide, 6000);
-
-        const resetInterval = () => {
-            clearInterval(slideInterval);
-            slideInterval = setInterval(nextSlide, 6000);
-        };
-
-        // Navigation buttons
-        if (nextBtn) nextBtn.addEventListener("click", () => { nextSlide(); resetInterval(); });
-        if (prevBtn) prevBtn.addEventListener("click", () => { prevSlide(); resetInterval(); });
-
-        // Dot click
-        dots.forEach(dot => {
-            dot.addEventListener("click", e => {
-                showSlide(Number(e.target.dataset.index));
-                resetInterval();
-            });
-        });
-
-        // Touch swipe for mobile
-        let startX = 0;
-        slides.forEach(slide => {
-            slide.addEventListener("touchstart", e => startX = e.touches[0].clientX);
-            slide.addEventListener("touchend", e => {
-                const endX = e.changedTouches[0].clientX;
-                if (startX - endX > 50) { nextSlide(); resetInterval(); }
-                if (endX - startX > 50) { prevSlide(); resetInterval(); }
-            });
-        });
-
-        // Initialize first slide
-        showSlide(0);
     }
 
-    /* ================= MOBILE NAVIGATION ================= */
-    const hamburger = document.querySelector(".hamburger");
-    const navLinks = document.querySelector(".nav-links");
+    if (prevBtn) {
+        prevBtn.addEventListener("click", () => {
+            prevSlide();
+            resetAutoSlide();
+        });
+    }
 
-    if (hamburger && navLinks) {
-        hamburger.addEventListener("click", () => {
-            navLinks.classList.toggle("show");
-            hamburger.classList.toggle("active");
-            hamburger.setAttribute("aria-expanded", hamburger.classList.contains("active"));
+    /* ========================
+       DOT EVENTS
+    ======================== */
+    dots.forEach(dot => {
+        dot.addEventListener("click", e => {
+            showSlide(Number(e.target.dataset.index));
+            resetAutoSlide();
+        });
+    });
+
+    /* ========================
+       TOUCH SWIPE (MOBILE)
+    ======================== */
+    let startX = 0;
+
+    slides.forEach(slide => {
+        slide.addEventListener("touchstart", e => {
+            startX = e.touches[0].clientX;
         });
 
-        // Close menu when clicking outside
-        document.addEventListener("click", e => {
-            if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
-                navLinks.classList.remove("show");
-                hamburger.classList.remove("active");
-                hamburger.setAttribute("aria-expanded", "false");
+        slide.addEventListener("touchend", e => {
+            const endX = e.changedTouches[0].clientX;
+
+            if (startX - endX > 50) {
+                nextSlide();
+                resetAutoSlide();
+            }
+
+            if (endX - startX > 50) {
+                prevSlide();
+                resetAutoSlide();
             }
         });
+    });
 
-        // Close menu on link click
-        navLinks.querySelectorAll("a").forEach(link => {
-            link.addEventListener("click", () => {
-                navLinks.classList.remove("show");
-                hamburger.classList.remove("active");
-                hamburger.setAttribute("aria-expanded", "false");
-            });
-        });
-    }
-
-    /* ================= SEARCH BAR (OPTIONAL) ================= */
-    const searchField = document.querySelector(".nav-search input");
-    if (searchField) {
-        const urlParams = new URLSearchParams(window.location.search);
-        const searchQuery = urlParams.get("q");
-        if (searchQuery) searchField.value = searchQuery;
-    }
+    /* ========================
+       INITIALIZE
+    ======================== */
+    showSlide(0);
+    startAutoSlide();
 
 });

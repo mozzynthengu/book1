@@ -1,17 +1,32 @@
-/* =========================
-   Service Detail Section
-============================ */
+/* ============================================================
+   SERVICE DETAIL PAGE STYLES (Optimized for Performance & Accessibility)
+============================================================ */
+
+/* --- Root Variables --- */
+:root {
+    --primary-color: #1B5E20;
+    --secondary-color: #4CAF50;
+    --background-color: #E8F5E9;
+    --card-bg: #fff;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+    --transition-speed: 0.3s;
+}
+
+/* --- Service Detail Container --- */
 .service-detail {
     max-width: 900px;
     margin: 50px auto;
     padding: 30px 25px;
-    background-color: #fff;
+    background-color: var(--card-bg);
     border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 20px var(--card-shadow);
     text-align: center;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease, transform 0.6s ease;
+    font-family: var(--font-body);
 }
 
 .service-detail.visible {
@@ -26,12 +41,20 @@
     margin-bottom: 25px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    display: block;
 }
 
+/* Explicit dimensions to reduce CLS */
+.service-detail img[src] {
+    height: auto;
+}
+
+/* --- Headings and Text --- */
 .service-detail h1 {
-    color: #1B5E20;
+    color: var(--primary-color);
     font-size: 2.2rem;
     margin-bottom: 20px;
+    font-family: var(--font-heading);
 }
 
 .service-detail p {
@@ -39,11 +62,10 @@
     font-size: 1rem;
     margin-bottom: 18px;
     line-height: 1.7;
+    text-align: left;
 }
 
-/* =========================
-   Breadcrumbs
-============================ */
+/* --- Breadcrumbs --- */
 .breadcrumbs {
     font-size: 0.95rem;
     color: #555;
@@ -52,15 +74,17 @@
 }
 
 .breadcrumbs a {
-    color: #1B5E20;
+    color: var(--primary-color);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.2s ease;
+    transition: color var(--transition-speed);
 }
 
-.breadcrumbs a:hover {
-    color: #4CAF50;
+.breadcrumbs a:hover,
+.breadcrumbs a:focus {
+    color: var(--secondary-color);
     text-decoration: underline;
+    outline: none;
 }
 
 .breadcrumbs span {
@@ -68,9 +92,7 @@
     font-weight: 400;
 }
 
-/* =========================
-   Navigation Buttons
-============================ */
+/* --- Navigation Buttons --- */
 .navigation-buttons {
     display: flex;
     justify-content: center;
@@ -86,36 +108,40 @@
     border-radius: 6px;
     font-size: 1rem;
     cursor: pointer;
-    transition: all 0.3s ease, transform 0.2s;
+    transition: all var(--transition-speed), transform 0.2s;
+    font-family: var(--font-body);
 }
 
 /* Back Button */
 .back-btn {
-    background-color: #1B5E20;
+    background-color: var(--primary-color);
     color: #fff;
 }
 
-.back-btn:hover {
-    background-color: #4CAF50;
+.back-btn:hover,
+.back-btn:focus {
+    background-color: var(--secondary-color);
     transform: translateY(-2px);
+    outline: none;
 }
 
 /* Previous / Next Buttons */
 .prev-btn,
 .next-btn {
-    background-color: #E8F5E9;
-    color: #1B5E20;
+    background-color: var(--background-color);
+    color: var(--primary-color);
 }
 
 .prev-btn:hover,
-.next-btn:hover {
+.next-btn:hover,
+.prev-btn:focus,
+.next-btn:focus {
     background-color: #C8E6C9;
     transform: translateY(-2px);
+    outline: none;
 }
 
-/* =========================
-   Responsive
-============================ */
+/* --- Responsive --- */
 @media (max-width: 768px) {
     .service-detail {
         padding: 20px 18px;
@@ -128,6 +154,10 @@
 
     .breadcrumbs {
         font-size: 0.9rem;
+    }
+
+    .service-detail p {
+        text-align: left;
     }
 }
 

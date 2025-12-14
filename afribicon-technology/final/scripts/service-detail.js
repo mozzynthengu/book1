@@ -40,6 +40,11 @@ const service = services[serviceIndex];
 // Render Service Detail
 // =========================
 if (service) {
+    // Set dynamic title & meta description for SEO
+    document.title = `${service.title} | AFRIBICON TECHNOLOGY`;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if(metaDesc) metaDesc.setAttribute('content', service.description);
+
     // Breadcrumbs
     const breadcrumbs = `
         <nav class="breadcrumbs" aria-label="Breadcrumb">
@@ -52,7 +57,6 @@ if (service) {
     // Navigation Buttons
     const prevIndex = serviceIndex > 0 ? serviceIndex - 1 : services.length - 1;
     const nextIndex = serviceIndex < services.length - 1 ? serviceIndex + 1 : 0;
-
     const navigationButtons = `
         <div class="navigation-buttons">
             <button class="prev-btn" onclick="navigateService(${prevIndex})">← Previous</button>
@@ -65,7 +69,7 @@ if (service) {
     serviceDetailContainer.innerHTML = `
         ${breadcrumbs}
         <h1 id="service-title">${service.title}</h1>
-        <img src="${service.image}" alt="${service.title}" loading="lazy">
+        <img src="${service.image}" alt="${service.title}" width="${service.width}" height="${service.height}" loading="eager">
         <p>${service.description}</p>
         <p>${service.details}</p>
         ${navigationButtons}
@@ -73,6 +77,22 @@ if (service) {
 
     // Fade-in animation
     setTimeout(() => serviceDetailContainer.classList.add('visible'), 50);
+
+    // Insert JSON-LD structured data for SEO
+    const structuredData = document.createElement('script');
+    structuredData.type = 'application/ld+json';
+    structuredData.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": service.title,
+        "provider": {
+            "@type": "Organization",
+            "name": "AFRIBICON TECHNOLOGY",
+            "url": "https://www.afribi-tech.com"
+        },
+        "description": service.description
+    });
+    document.head.appendChild(structuredData);
 
 } else {
     serviceDetailContainer.innerHTML = `<p>Service not found.</p>`;

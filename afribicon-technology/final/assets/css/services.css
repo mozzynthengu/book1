@@ -1,16 +1,29 @@
 /* ============================================================
-   SERVICES PAGE STYLES (Optimized)
+   SERVICES PAGE STYLES (Optimized for Performance & Accessibility)
 ============================================================ */
+
+/* --- Root Variables --- */
+:root {
+    --primary-color: #1B5E20;
+    --secondary-color: #4CAF50;
+    --background-color: #E8F5E9;
+    --card-bg: #fff;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+    --transition-speed: 0.3s;
+}
 
 /* --- Services Hero --- */
 .services-hero {
     text-align: center;
     margin: 40px 20px;
+    font-family: var(--font-body);
 }
 
 .services-hero h1 {
     font-size: 2.5rem;
-    color: #1B5E20;
+    color: var(--primary-color);
     margin-bottom: 10px;
 }
 
@@ -33,20 +46,23 @@
 
 .service-filter label {
     font-weight: 600;
-    color: #1B5E20;
+    color: var(--primary-color);
 }
 
 #serviceCategory {
     padding: 12px 20px;
     border-radius: 8px;
-    border: 2px solid #1B5E20;
+    border: 2px solid var(--primary-color);
     font-size: 1rem;
     cursor: pointer;
-    background-color: #E8F5E9;
+    background-color: var(--background-color);
+    transition: border-color var(--transition-speed);
 }
 
-#serviceCategory:hover {
-    border-color: #4CAF50;
+#serviceCategory:hover,
+#serviceCategory:focus {
+    border-color: var(--secondary-color);
+    outline: none;
 }
 
 /* --- Services Grid --- */
@@ -62,15 +78,15 @@
 .service-card {
     flex: 1 1 250px;
     max-width: 300px;
-    background-color: #fff;
+    background-color: var(--card-bg);
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px var(--card-shadow);
     padding: 20px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: all 0.3s ease;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed), background-color var(--transition-speed);
     opacity: 1;
     transform: translateY(0);
 }
@@ -81,27 +97,27 @@
     pointer-events: none;
 }
 
-.service-card:hover {
+.service-card:hover,
+.service-card:focus-within {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     background-color: #f1fdf1;
+    outline: none;
 }
 
 .service-card img {
-   width: 100%;
+    width: 100%;
     height: auto;
     aspect-ratio: 4/3;
     object-fit: cover;
-
     border-radius: 10px;
-
 }
 
 .service-card h3 {
     margin: 10px 0;
     font-size: 1.2rem;
-    color: #1B5E20;
+    color: var(--primary-color);
+    font-family: var(--font-heading);
 }
 
 .service-card p {
@@ -118,16 +134,19 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 0.9rem;
-    background-color: #1B5E20;
+    background-color: var(--primary-color);
     color: #fff;
-    transition: all 0.3s ease;
+    transition: background-color var(--transition-speed), transform 0.2s;
 }
 
-.read-more-btn:hover {
-    background-color: #4CAF50;
+.read-more-btn:hover,
+.read-more-btn:focus {
+    background-color: var(--secondary-color);
+    outline: none;
+    transform: translateY(-2px);
 }
 
-/* --- Modal Popup --- */
+/* --- Modal Popup (Optional) --- */
 .service-modal {
     display: none;
     position: fixed;
@@ -162,7 +181,7 @@
     right: 20px;
     font-size: 1.5rem;
     cursor: pointer;
-    color: #1B5E20;
+    color: var(--primary-color);
 }
 
 /* --- Responsive --- */
