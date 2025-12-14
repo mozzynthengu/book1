@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { id: 5, title: "School/Clinic Systems", category: "school", description: "Professional systems to manage schools, clinics, and organizations.", image: "assets/images/img/sclinic.jpeg" },
         { id: 6, title: "Branding & Graphic Design", category: "branding", description: "Professional logos, branding kits, posters, and marketing materials.", image: "assets/images/img/dez.png" },
         { id: 7, title: "IT Consulting", category: "it", description: "Expert guidance for technology adoption, systems, and digital transformation.", image: "assets/images/img/it.png" },
-        { id: 8, title: "Maintenance", category: "maintenance", description: "Keep your websites and systems running smoothly with regular updates and support.", image: "assets/images/img/Maintain.jpeg" },
+        { id: 8, title: "Maintenance", category: "maintenance", description: "Keep your websites and systems running smoothly with regular updates and support.", image: "assets/images/img/maintain.jpeg" },
         { id: 9, title: "Cybersecurity", category: "cybersecurity", description: "Protect your data and systems from cyber threats and attacks.", image: "assets/images/img/cyber.jpeg" },
         { id: 10, title: "Mobile App Development", category: "mobile", description: "Create user-friendly mobile applications for Android and iOS.", image: "assets/images/img/mobile.jpeg" },
         { id: 11, title: "Digital Marketing", category: "marketing", description: "Grow your online presence with SEO, social media, and ad campaigns.", image: "assets/images/img/digit.jpeg" },
